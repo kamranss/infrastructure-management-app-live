@@ -1,0 +1,94 @@
+@use "sass:color";
+
+.pagination {
+  button {
+    background-color: #fff;
+    color: var(--smaint-navy);
+    border-radius: 8px;
+    padding: 4px 12px;
+    &.Mui-selected {
+      background-color: var(--smaint-primary);
+      color: #fff;
+    }
+  }
+  .select-mui {
+    background-color: #fff;
+    border: 1px solid var(--smaint-border);
+    margin-right: 14px;
+    height: 36px;
+    border-radius: 8px;
+    padding: 0 8px;
+  }
+}
+
+.MuiTableBody-root {
+  tr:nth-child(even):hover {
+    border: 1px solid var(--smaint-border);
+    background: var(--smaint-surface-alt);
+  }
+
+  tr:nth-child(odd):hover {
+    border: 1px solid var(--smaint-border);
+    background: var(--smaint-surface-alt);
+  }
+}
+.row-active {
+  background-color: #0f6466;
+  color: white;
+
+  :last-child {
+    color: white;
+  }
+}
+
+.row-inactive {
+  background-color: #607d8b;
+  color: white;
+}
+
+.row-repair {
+  background-color: #ef6c00;
+  color: white;
+}
+
+.row-inuse {
+  background-color: #0288d1;
+  color: white;
+}
+
+.row-concervated {
+  background-color: #5e35b1;
+  color: white;
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0; // Icon is invisible at start and end
+  }
+  50% {
+    opacity: 1; // Icon is visible in the middle of animation
+  }
+}
+
+/* Apply the animation to the icon */
+i.fa-clock {
+  animation: fadeInOut 2s ease-in-out infinite; // Adjust duration and animation type as needed
+  color: #f2668b;
+  font-size: larger;
+}
+
+.row-start {
+  background-color: #0f6466;
+  :last-child {
+    color: white;
+  }
+}
+
+.row-end {
+  background-color: #607d8b;
+}
+
+.row-cnl {
+  background-color: #ef5350;
+}

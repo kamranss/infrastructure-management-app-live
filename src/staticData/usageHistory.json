@@ -1,0 +1,156 @@
+[
+  {
+    "id": 7001,
+    "equipmentId": 1001,
+    "equipmentName": "Hydraulic Press A1",
+    "operatorName": "Jamie Brooks",
+    "operationName": "Chassis Rail Forming",
+    "startDate": "2024-08-05T06:00:00Z",
+    "endDate": "2024-08-05T10:00:00Z",
+    "totalTime": 240,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7002,
+    "equipmentId": 1001,
+    "equipmentName": "Hydraulic Press A1",
+    "operatorName": "Jamie Brooks",
+    "operationName": "Tool Trial",
+    "startDate": "2024-08-12T07:30:00Z",
+    "endDate": "2024-08-12T11:45:00Z",
+    "totalTime": 255,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7003,
+    "equipmentId": 1002,
+    "equipmentName": "Spot Welder BX",
+    "operatorName": "Kim Rogers",
+    "operationName": "Floor Panel Weld",
+    "startDate": "2024-08-04T14:00:00Z",
+    "endDate": "2024-08-04T22:00:00Z",
+    "totalTime": 480,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7004,
+    "equipmentId": 1002,
+    "equipmentName": "Spot Welder BX",
+    "operatorName": "Kim Rogers",
+    "operationName": "Gun Calibration",
+    "startDate": "2024-08-16T08:00:00Z",
+    "endDate": "2024-08-16T09:30:00Z",
+    "totalTime": 90,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7005,
+    "equipmentId": 1003,
+    "equipmentName": "Powder Booth P3",
+    "operatorName": "Lena Ortiz",
+    "operationName": "Frame Coating",
+    "startDate": "2024-08-06T05:00:00Z",
+    "endDate": "2024-08-06T13:00:00Z",
+    "totalTime": 480,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7006,
+    "equipmentId": 1004,
+    "equipmentName": "Assembly Conveyor C1",
+    "operatorName": "Auto Scheduler",
+    "operationName": "Evening Shift",
+    "startDate": "2024-08-09T18:00:00Z",
+    "endDate": "2024-08-10T02:00:00Z",
+    "totalTime": 480,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7007,
+    "equipmentId": 1005,
+    "equipmentName": "Torque Station TS7",
+    "operatorName": "Felipe Roman",
+    "operationName": "Final Torque",
+    "startDate": "2024-08-11T09:15:00Z",
+    "endDate": "2024-08-11T12:15:00Z",
+    "totalTime": 180,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7008,
+    "equipmentId": 1006,
+    "equipmentName": "CNC Mill VMX",
+    "operatorName": "Tool Room Scheduler",
+    "operationName": "Fixture Machining",
+    "startDate": "2024-08-13T00:00:00Z",
+    "endDate": "2024-08-13T08:00:00Z",
+    "totalTime": 480,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7009,
+    "equipmentId": 1007,
+    "equipmentName": "Autoclave AC2",
+    "operatorName": "Composite Control",
+    "operationName": "Wing Layup",
+    "startDate": "2024-08-07T04:00:00Z",
+    "endDate": "2024-08-07T16:00:00Z",
+    "totalTime": 720,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7010,
+    "equipmentId": 1008,
+    "equipmentName": "HVAC Chiller CH5",
+    "operatorName": "BAS",
+    "operationName": "Peak Cooling",
+    "startDate": "2024-08-14T06:00:00Z",
+    "endDate": "2024-08-14T18:00:00Z",
+    "totalTime": 720,
+    "status": "ONGOING"
+  },
+  {
+    "id": 7011,
+    "equipmentId": 1009,
+    "equipmentName": "AGV Fleet",
+    "operatorName": "Fleet Controller",
+    "operationName": "Line Feeding",
+    "startDate": "2024-08-12T05:30:00Z",
+    "endDate": "2024-08-12T13:30:00Z",
+    "totalTime": 480,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7012,
+    "equipmentId": 1010,
+    "equipmentName": "Test Bench TB4",
+    "operatorName": "QA Lab",
+    "operationName": "Thermal Cycle",
+    "startDate": "2024-08-15T10:00:00Z",
+    "endDate": "2024-08-15T16:00:00Z",
+    "totalTime": 360,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7013,
+    "equipmentId": 1011,
+    "equipmentName": "3D Printer Farm",
+    "operatorName": "Rapid Proto",
+    "operationName": "Fixture Prototype",
+    "startDate": "2024-08-03T08:00:00Z",
+    "endDate": "2024-08-03T18:00:00Z",
+    "totalTime": 600,
+    "status": "FINISHED"
+  },
+  {
+    "id": 7014,
+    "equipmentId": 1012,
+    "equipmentName": "Laser Cutter LC1",
+    "operatorName": "Sheet Metal",
+    "operationName": "Nesting Program",
+    "startDate": "2024-08-02T11:00:00Z",
+    "endDate": "2024-08-02T17:00:00Z",
+    "totalTime": 360,
+    "status": "FINISHED"
+  }
+]

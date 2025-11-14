@@ -1,0 +1,1040 @@
+{
+  "items": [
+    {
+      "id": 1001,
+      "name": "Hydraulic Press A1",
+      "unitNumber": "HP-A1",
+      "description": "Primary hydraulic press for chassis rails.",
+      "operationSite": "Plant A - Line 1",
+      "operationSiteId": 201,
+      "productionYear": 2018,
+      "serialNumber": "HP-A1-2018-001",
+      "seriaNumber": "HP-A1-2018-001",
+      "type": "Press",
+      "equipmentTypeId": 1,
+      "status": "ACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-07-12T00:00:00Z",
+      "currentValue": 64000,
+      "departmentId": 1,
+      "modelId": 1,
+      "manufactureId": 1,
+      "operationSiteName": "North Campus",
+      "color": "Steel Blue",
+      "identification": "Line1-HP",
+      "capacity": "25T",
+      "usageLocation": "Bay 2",
+      "condition": "Good",
+      "cycle": "Monthly",
+      "runtimeHours": 2680,
+      "squenceValue": 220,
+      "resetValue": 0,
+      "mpList": [
+        {
+          "id": 2001,
+          "code": "MP-2001",
+          "name": "Hydraulic Safety",
+          "description": "Inspect hydraulic hoses and safety interlocks.",
+          "status": "ACTIVE",
+          "dueDate": "2024-11-15T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5001,
+              "sequenceValue": 250,
+              "isMpCompleted": false,
+              "metricType": "HOURS",
+              "targetValue": 250
+            }
+          ]
+        },
+        {
+          "id": 2005,
+          "code": "MP-2005",
+          "name": "Lubrication Cycle",
+          "description": "Verify lube points and pressure.",
+          "status": "PENDING",
+          "dueDate": "2024-10-05T00:00:00Z",
+          "mpTime": true,
+          "maintenanceSettingsList": [
+            {
+              "id": 5005,
+              "sequenceValue": 90,
+              "isMpCompleted": null,
+              "metricType": "DAYS",
+              "targetValue": 90
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3001,
+          "code": "FILTER-HYD",
+          "name": "Hydraulic Filter",
+          "quantity": 2,
+          "reorderLimit": 1,
+          "status": "INSTALLED"
+        },
+        {
+          "id": 3002,
+          "code": "HOSE-16MM",
+          "name": "Pressure Hose 16mm",
+          "quantity": 4,
+          "reorderLimit": 2,
+          "status": "SPARE"
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "name": "Spot Welder BX",
+      "unitNumber": "SW-BX",
+      "description": "Dual-gun robotic welder for floor panels.",
+      "operationSite": "Plant A - Weld Cell",
+      "operationSiteId": 202,
+      "productionYear": 2019,
+      "serialNumber": "SW-BX-2019-014",
+      "seriaNumber": "SW-BX-2019-014",
+      "type": "Welder",
+      "equipmentTypeId": 2,
+      "status": "IN_USE",
+      "mpTime": false,
+      "lastMaintenace": "2024-06-02T00:00:00Z",
+      "currentValue": 82000,
+      "departmentId": 2,
+      "modelId": 2,
+      "manufactureId": 2,
+      "operationSiteName": "North Campus",
+      "color": "Yellow",
+      "identification": "Weld-02",
+      "capacity": "45kA",
+      "usageLocation": "Cell 3",
+      "condition": "Excellent",
+      "cycle": "Bi-Weekly",
+      "runtimeHours": 3120,
+      "squenceValue": 60,
+      "resetValue": 0,
+      "mpList": [
+        {
+          "id": 2002,
+          "code": "MP-2002",
+          "name": "Gun Calibration",
+          "description": "Calibrate weld guns and torque.",
+          "status": "ACTIVE",
+          "dueDate": "2024-09-18T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5002,
+              "sequenceValue": 14,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 14
+            }
+          ]
+        },
+        {
+          "id": 2006,
+          "code": "MP-2006",
+          "name": "Cooling Loop Check",
+          "description": "Flush coolant manifolds.",
+          "status": "ACTIVE",
+          "dueDate": "2024-12-01T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5006,
+              "sequenceValue": 180,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 180
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3003,
+          "code": "TIP-08",
+          "name": "Copper Tip 8mm",
+          "quantity": 20,
+          "reorderLimit": 10,
+          "status": "INSTALLED"
+        },
+        {
+          "id": 3004,
+          "code": "COOL-FLTR",
+          "name": "Coolant Filter",
+          "quantity": 5,
+          "reorderLimit": 3,
+          "status": "SPARE"
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "name": "Powder Booth P3",
+      "unitNumber": "PB-P3",
+      "description": "Closed-loop powder coating booth.",
+      "operationSite": "Paint Campus",
+      "operationSiteId": 203,
+      "productionYear": 2020,
+      "serialNumber": "PB-P3-2020-009",
+      "seriaNumber": "PB-P3-2020-009",
+      "type": "Booth",
+      "equipmentTypeId": 3,
+      "status": "ACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-08-01T00:00:00Z",
+      "currentValue": 45000,
+      "departmentId": 3,
+      "modelId": 3,
+      "manufactureId": 3,
+      "operationSiteName": "West Campus",
+      "color": "White",
+      "identification": "Paint-Booth",
+      "capacity": "4m x 5m",
+      "usageLocation": "Hall 2",
+      "condition": "Good",
+      "cycle": "Weekly",
+      "runtimeHours": 1980,
+      "squenceValue": 35,
+      "resetValue": 0,
+      "mpList": [
+        {
+          "id": 2003,
+          "code": "MP-2003",
+          "name": "Filter Swap",
+          "description": "Replace intake and exhaust filters.",
+          "status": "ACTIVE",
+          "dueDate": "2024-09-07T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5003,
+              "sequenceValue": 30,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 30
+            }
+          ]
+        },
+        {
+          "id": 2007,
+          "code": "MP-2007",
+          "name": "Booth Deep Clean",
+          "description": "Full wash down and reclaim bin purge.",
+          "status": "PENDING",
+          "dueDate": "2024-11-20T00:00:00Z",
+          "mpTime": true,
+          "maintenanceSettingsList": [
+            {
+              "id": 5007,
+              "sequenceValue": 60,
+              "isMpCompleted": null,
+              "metricType": "DAYS",
+              "targetValue": 60
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3005,
+          "code": "FILTER-PINT",
+          "name": "Intake Filter",
+          "quantity": 12,
+          "reorderLimit": 6,
+          "status": "SPARE"
+        },
+        {
+          "id": 3006,
+          "code": "NOZZLE-POW",
+          "name": "Spray Nozzle",
+          "quantity": 8,
+          "reorderLimit": 4,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "name": "Assembly Conveyor C1",
+      "unitNumber": "CV-C1",
+      "description": "Main pallet conveyor for assembly hall.",
+      "operationSite": "Plant B",
+      "operationSiteId": 204,
+      "productionYear": 2017,
+      "serialNumber": "CV-C1-2017-003",
+      "seriaNumber": "CV-C1-2017-003",
+      "type": "Conveyor",
+      "equipmentTypeId": 4,
+      "status": "REPAIR",
+      "mpTime": false,
+      "lastMaintenace": "2024-04-20T00:00:00Z",
+      "currentValue": 38000,
+      "departmentId": 4,
+      "modelId": 4,
+      "manufactureId": 4,
+      "operationSiteName": "Central",
+      "color": "Gray",
+      "identification": "Conv-C1",
+      "capacity": "2T",
+      "usageLocation": "Final Assembly",
+      "condition": "Attention",
+      "cycle": "Weekly",
+      "runtimeHours": 5400,
+      "squenceValue": 50,
+      "resetValue": 10,
+      "mpList": [
+        {
+          "id": 2004,
+          "code": "MP-2004",
+          "name": "Chain Tension",
+          "description": "Check chain tension and wear guides.",
+          "status": "ACTIVE",
+          "dueDate": "2024-09-04T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5004,
+              "sequenceValue": 15,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 15
+            }
+          ]
+        },
+        {
+          "id": 2008,
+          "code": "MP-2008",
+          "name": "Drive Inspection",
+          "description": "Inspect gearboxes and motors.",
+          "status": "ACTIVE",
+          "dueDate": "2024-12-22T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5008,
+              "sequenceValue": 120,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 120
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3007,
+          "code": "CHAIN-5RED",
+          "name": "Drive Chain",
+          "quantity": 2,
+          "reorderLimit": 1,
+          "status": "SPARE"
+        },
+        {
+          "id": 3008,
+          "code": "MOTOR-3HP",
+          "name": "Conveyor Motor",
+          "quantity": 1,
+          "reorderLimit": 1,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "name": "Torque Station TS7",
+      "unitNumber": "TS-7",
+      "description": "Smart torque guns for drivetrain.",
+      "operationSite": "Assembly South",
+      "operationSiteId": 205,
+      "productionYear": 2021,
+      "serialNumber": "TS-7-2021-002",
+      "seriaNumber": "TS-7-2021-002",
+      "type": "Tooling",
+      "equipmentTypeId": 5,
+      "status": "ACTIVE",
+      "mpTime": true,
+      "lastMaintenace": "2024-05-11T00:00:00Z",
+      "currentValue": 22000,
+      "departmentId": 4,
+      "modelId": 5,
+      "manufactureId": 5,
+      "operationSiteName": "Central",
+      "color": "Black",
+      "identification": "TS-Drivetrain",
+      "capacity": "1200 Nm",
+      "usageLocation": "Line 4",
+      "condition": "Moderate",
+      "cycle": "Monthly",
+      "runtimeHours": 1420,
+      "squenceValue": 22,
+      "resetValue": 5,
+      "mpList": [
+        {
+          "id": 2009,
+          "code": "MP-2009",
+          "name": "Calibration",
+          "description": "Verification against master gauge.",
+          "status": "ACTIVE",
+          "dueDate": "2024-08-25T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5009,
+              "sequenceValue": 30,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 30
+            }
+          ]
+        },
+        {
+          "id": 2010,
+          "code": "MP-2010",
+          "name": "Battery Refresh",
+          "description": "Swap torque gun battery packs.",
+          "status": "PENDING",
+          "dueDate": "2024-09-02T00:00:00Z",
+          "mpTime": true,
+          "maintenanceSettingsList": [
+            {
+              "id": 5010,
+              "sequenceValue": 14,
+              "isMpCompleted": null,
+              "metricType": "DAYS",
+              "targetValue": 14
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3009,
+          "code": "BAT-TORQ",
+          "name": "Torque Gun Battery",
+          "quantity": 6,
+          "reorderLimit": 4,
+          "status": "SPARE"
+        },
+        {
+          "id": 3010,
+          "code": "BIT-18MM",
+          "name": "Precision Bit 18mm",
+          "quantity": 15,
+          "reorderLimit": 10,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1006,
+      "name": "CNC Mill VMX",
+      "unitNumber": "VMX-40",
+      "description": "4-axis CNC for fixtures.",
+      "operationSite": "Tool Room",
+      "operationSiteId": 206,
+      "productionYear": 2016,
+      "serialNumber": "VMX-40-2016-004",
+      "seriaNumber": "VMX-40-2016-004",
+      "type": "CNC",
+      "equipmentTypeId": 6,
+      "status": "ACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-06-29T00:00:00Z",
+      "currentValue": 91000,
+      "departmentId": 7,
+      "modelId": 6,
+      "manufactureId": 6,
+      "operationSiteName": "South Campus",
+      "color": "White",
+      "identification": "VMX",
+      "capacity": "1200mm table",
+      "usageLocation": "Tool Room",
+      "condition": "Excellent",
+      "cycle": "Weekly",
+      "runtimeHours": 4020,
+      "squenceValue": 48,
+      "resetValue": 12,
+      "mpList": [
+        {
+          "id": 2011,
+          "code": "MP-2011",
+          "name": "Axis Alignment",
+          "description": "Ball-bar test and compensation.",
+          "status": "ACTIVE",
+          "dueDate": "2024-09-03T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5011,
+              "sequenceValue": 45,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 45
+            }
+          ]
+        },
+        {
+          "id": 2012,
+          "code": "MP-2012",
+          "name": "Coolant Quality",
+          "description": "Check coolant pH and replace filters.",
+          "status": "ACTIVE",
+          "dueDate": "2024-10-14T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5012,
+              "sequenceValue": 30,
+              "isMpCompleted": true,
+              "metricType": "DAYS",
+              "targetValue": 30
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3011,
+          "code": "TOOL-HSK",
+          "name": "HSK Tool Holder",
+          "quantity": 10,
+          "reorderLimit": 5,
+          "status": "SPARE"
+        },
+        {
+          "id": 3012,
+          "code": "COOL-DRM",
+          "name": "Coolant Drum",
+          "quantity": 3,
+          "reorderLimit": 2,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1007,
+      "name": "Autoclave AC2",
+      "unitNumber": "AC-2",
+      "description": "Composite curing autoclave.",
+      "operationSite": "Composites",
+      "operationSiteId": 207,
+      "productionYear": 2015,
+      "serialNumber": "AC-2-2015-001",
+      "seriaNumber": "AC-2-2015-001",
+      "type": "Autoclave",
+      "equipmentTypeId": 7,
+      "status": "ACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-05-20T00:00:00Z",
+      "currentValue": 124000,
+      "departmentId": 6,
+      "modelId": 7,
+      "manufactureId": 7,
+      "operationSiteName": "South Campus",
+      "color": "Silver",
+      "identification": "AC-2",
+      "capacity": "3m dia",
+      "usageLocation": "Composite Bay",
+      "condition": "Good",
+      "cycle": "Monthly",
+      "runtimeHours": 6800,
+      "squenceValue": 90,
+      "resetValue": 15,
+      "mpList": [
+        {
+          "id": 2013,
+          "code": "MP-2013",
+          "name": "Door Seal Check",
+          "description": "Inspect high-temp seals.",
+          "status": "ACTIVE",
+          "dueDate": "2024-09-30T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5013,
+              "sequenceValue": 60,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 60
+            }
+          ]
+        },
+        {
+          "id": 2014,
+          "code": "MP-2014",
+          "name": "Calibration Cycle",
+          "description": "Validate thermocouples and pressure readings.",
+          "status": "ACTIVE",
+          "dueDate": "2024-12-05T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5014,
+              "sequenceValue": 120,
+              "isMpCompleted": true,
+              "metricType": "DAYS",
+              "targetValue": 120
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3013,
+          "code": "SEAL-HT",
+          "name": "High Temp Seal",
+          "quantity": 4,
+          "reorderLimit": 2,
+          "status": "SPARE"
+        },
+        {
+          "id": 3014,
+          "code": "THERMO-6PT",
+          "name": "6pt Thermocouple",
+          "quantity": 6,
+          "reorderLimit": 3,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "name": "HVAC Chiller CH5",
+      "unitNumber": "CH-5",
+      "description": "Central chilled water unit.",
+      "operationSite": "Utilities",
+      "operationSiteId": 208,
+      "productionYear": 2014,
+      "serialNumber": "CH-5-2014-001",
+      "seriaNumber": "CH-5-2014-001",
+      "type": "HVAC",
+      "equipmentTypeId": 8,
+      "status": "ACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-06-15T00:00:00Z",
+      "currentValue": 150000,
+      "departmentId": 9,
+      "modelId": 8,
+      "manufactureId": 8,
+      "operationSiteName": "Utility Yard",
+      "color": "Green",
+      "identification": "CH-5",
+      "capacity": "500T",
+      "usageLocation": "Utility Yard",
+      "condition": "Good",
+      "cycle": "Monthly",
+      "runtimeHours": 8200,
+      "squenceValue": 75,
+      "resetValue": 20,
+      "mpList": [
+        {
+          "id": 2015,
+          "code": "MP-2015",
+          "name": "Chiller PM",
+          "description": "Inspect compressors, oil, controls.",
+          "status": "ACTIVE",
+          "dueDate": "2024-09-01T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5015,
+              "sequenceValue": 45,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 45
+            }
+          ]
+        },
+        {
+          "id": 2016,
+          "code": "MP-2016",
+          "name": "Water Treatment",
+          "description": "Check glycol levels and filters.",
+          "status": "ACTIVE",
+          "dueDate": "2024-10-10T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5016,
+              "sequenceValue": 60,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 60
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3015,
+          "code": "FILTER-Y",
+          "name": "Y-Strainer",
+          "quantity": 5,
+          "reorderLimit": 2,
+          "status": "SPARE"
+        },
+        {
+          "id": 3016,
+          "code": "GLYCOL-DRM",
+          "name": "Glycol Drum",
+          "quantity": 4,
+          "reorderLimit": 2,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1009,
+      "name": "AGV Fleet",
+      "unitNumber": "AGV-FLT",
+      "description": "12 automated guided vehicles.",
+      "operationSite": "Logistics",
+      "operationSiteId": 209,
+      "productionYear": 2022,
+      "serialNumber": "AGV-FLT-2022",
+      "seriaNumber": "AGV-FLT-2022",
+      "type": "AGV",
+      "equipmentTypeId": 9,
+      "status": "ACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-08-10T00:00:00Z",
+      "currentValue": 300000,
+      "departmentId": 8,
+      "modelId": 9,
+      "manufactureId": 9,
+      "operationSiteName": "Logistics Center",
+      "color": "Orange",
+      "identification": "AGV",
+      "capacity": "1.5T",
+      "usageLocation": "Warehouse",
+      "condition": "Excellent",
+      "cycle": "Weekly",
+      "runtimeHours": 2200,
+      "squenceValue": 21,
+      "resetValue": 3,
+      "mpList": [
+        {
+          "id": 2017,
+          "code": "MP-2017",
+          "name": "Battery Rotation",
+          "description": "Equalize battery packs.",
+          "status": "ACTIVE",
+          "dueDate": "2024-08-28T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5017,
+              "sequenceValue": 7,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 7
+            }
+          ]
+        },
+        {
+          "id": 2018,
+          "code": "MP-2018",
+          "name": "Sensor Health",
+          "description": "Check safety scanners.",
+          "status": "ACTIVE",
+          "dueDate": "2024-09-12T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5018,
+              "sequenceValue": 30,
+              "isMpCompleted": true,
+              "metricType": "DAYS",
+              "targetValue": 30
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3017,
+          "code": "BAT-AGV",
+          "name": "AGV Battery Pack",
+          "quantity": 8,
+          "reorderLimit": 4,
+          "status": "SPARE"
+        },
+        {
+          "id": 3018,
+          "code": "LIDAR-SNS",
+          "name": "Safety Lidar",
+          "quantity": 3,
+          "reorderLimit": 2,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1010,
+      "name": "Test Bench TB4",
+      "unitNumber": "TB-4",
+      "description": "Thermal cycling bench.",
+      "operationSite": "Testing Lab",
+      "operationSiteId": 210,
+      "productionYear": 2021,
+      "serialNumber": "TB-4-2021-004",
+      "seriaNumber": "TB-4-2021-004",
+      "type": "Test Bench",
+      "equipmentTypeId": 10,
+      "status": "ACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-07-05T00:00:00Z",
+      "currentValue": 76000,
+      "departmentId": 5,
+      "modelId": 10,
+      "manufactureId": 10,
+      "operationSiteName": "Test Center",
+      "color": "Blue",
+      "identification": "TB4",
+      "capacity": "10 fixtures",
+      "usageLocation": "Lab 1",
+      "condition": "Good",
+      "cycle": "Monthly",
+      "runtimeHours": 1880,
+      "squenceValue": 28,
+      "resetValue": 4,
+      "mpList": [
+        {
+          "id": 2019,
+          "code": "MP-2019",
+          "name": "Sensor Calibration",
+          "description": "Calibrate temperature and vibration sensors.",
+          "status": "ACTIVE",
+          "dueDate": "2024-08-30T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5019,
+              "sequenceValue": 30,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 30
+            }
+          ]
+        },
+        {
+          "id": 2020,
+          "code": "MP-2020",
+          "name": "Fixture Inspection",
+          "description": "Inspect clamps and connectors.",
+          "status": "ACTIVE",
+          "dueDate": "2024-10-11T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5020,
+              "sequenceValue": 45,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 45
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3019,
+          "code": "SENSOR-PT100",
+          "name": "PT100 Sensor",
+          "quantity": 5,
+          "reorderLimit": 2,
+          "status": "SPARE"
+        },
+        {
+          "id": 3020,
+          "code": "CLAMP-HVY",
+          "name": "Heavy Clamp",
+          "quantity": 12,
+          "reorderLimit": 6,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "name": "3D Printer Farm",
+      "unitNumber": "PRINT-LAB",
+      "description": "Additive lab with 6 printers.",
+      "operationSite": "R&D Pilot",
+      "operationSiteId": 211,
+      "productionYear": 2023,
+      "serialNumber": "PRN-LAB-2023",
+      "seriaNumber": "PRN-LAB-2023",
+      "type": "Printer",
+      "equipmentTypeId": 11,
+      "status": "ACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-07-25T00:00:00Z",
+      "currentValue": 68000,
+      "departmentId": 10,
+      "modelId": 11,
+      "manufactureId": 11,
+      "operationSiteName": "R&D",
+      "color": "White",
+      "identification": "PRINT",
+      "capacity": "6 machines",
+      "usageLocation": "Pilot Lab",
+      "condition": "Excellent",
+      "cycle": "Weekly",
+      "runtimeHours": 960,
+      "squenceValue": 14,
+      "resetValue": 2,
+      "mpList": [
+        {
+          "id": 2021,
+          "code": "MP-2021",
+          "name": "Extruder Clean",
+          "description": "Purge all nozzles.",
+          "status": "ACTIVE",
+          "dueDate": "2024-08-20T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5021,
+              "sequenceValue": 14,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 14
+            }
+          ]
+        },
+        {
+          "id": 2022,
+          "code": "MP-2022",
+          "name": "Bed Alignment",
+          "description": "Level build plates.",
+          "status": "ACTIVE",
+          "dueDate": "2024-09-05T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5022,
+              "sequenceValue": 21,
+              "isMpCompleted": true,
+              "metricType": "DAYS",
+              "targetValue": 21
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3021,
+          "code": "NOZZLE-04",
+          "name": "Nozzle 0.4mm",
+          "quantity": 24,
+          "reorderLimit": 12,
+          "status": "SPARE"
+        },
+        {
+          "id": 3022,
+          "code": "BED-SHEET",
+          "name": "Build Sheet",
+          "quantity": 10,
+          "reorderLimit": 5,
+          "status": "INSTALLED"
+        }
+      ]
+    },
+    {
+      "id": 1012,
+      "name": "Laser Cutter LC1",
+      "unitNumber": "LC-1",
+      "description": "High-power laser cutter for sheet metal.",
+      "operationSite": "Stamping Annex",
+      "operationSiteId": 212,
+      "productionYear": 2019,
+      "serialNumber": "LC-1-2019-001",
+      "seriaNumber": "LC-1-2019-001",
+      "type": "Laser",
+      "equipmentTypeId": 12,
+      "status": "INACTIVE",
+      "mpTime": false,
+      "lastMaintenace": "2024-03-30T00:00:00Z",
+      "currentValue": 110000,
+      "departmentId": 1,
+      "modelId": 12,
+      "manufactureId": 12,
+      "operationSiteName": "North Campus",
+      "color": "Red",
+      "identification": "LC-1",
+      "capacity": "8kW",
+      "usageLocation": "Annex",
+      "condition": "Idle",
+      "cycle": "Monthly",
+      "runtimeHours": 3500,
+      "squenceValue": 40,
+      "resetValue": 6,
+      "mpList": [
+        {
+          "id": 2023,
+          "code": "MP-2023",
+          "name": "Optics Clean",
+          "description": "Clean lens and mirrors.",
+          "status": "ACTIVE",
+          "dueDate": "2024-08-18T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5023,
+              "sequenceValue": 30,
+              "isMpCompleted": false,
+              "metricType": "DAYS",
+              "targetValue": 30
+            }
+          ]
+        },
+        {
+          "id": 2024,
+          "code": "MP-2024",
+          "name": "Beam Alignment",
+          "description": "Verify beam delivery path.",
+          "status": "ACTIVE",
+          "dueDate": "2024-10-01T00:00:00Z",
+          "mpTime": false,
+          "maintenanceSettingsList": [
+            {
+              "id": 5024,
+              "sequenceValue": 45,
+              "isMpCompleted": true,
+              "metricType": "DAYS",
+              "targetValue": 45
+            }
+          ]
+        }
+      ],
+      "partList": [
+        {
+          "id": 3023,
+          "code": "LENS-CO2",
+          "name": "CO2 Laser Lens",
+          "quantity": 4,
+          "reorderLimit": 2,
+          "status": "SPARE"
+        },
+        {
+          "id": 3024,
+          "code": "NOZZLE-12MM",
+          "name": "Nozzle 12mm",
+          "quantity": 6,
+          "reorderLimit": 3,
+          "status": "INSTALLED"
+        }
+      ]
+    }
+  ],
+  "totalCount": 12,
+  "pageCount": 2,
+  "pageSize": 10,
+  "currentPage": 1
+}

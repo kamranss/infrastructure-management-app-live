@@ -1,0 +1,1956 @@
+{
+  "plans": [
+    {
+      "id": 2001,
+      "code": "MP-2001",
+      "name": "Hydraulic Safety",
+      "description": "Inspect hydraulic hoses and safety interlocks.",
+      "metricType": "HOURS",
+      "targetValue": 250,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-01-01T00:00:00Z",
+      "updatedDate": "2024-01-21T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20011,
+          "name": "Hydraulic Safety Task 1",
+          "serviceDescription": "Inspect hydraulic hoses and safety interlocks. - step 1",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20012,
+          "name": "Hydraulic Safety Task 2",
+          "serviceDescription": "Inspect hydraulic hoses and safety interlocks. - step 2",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1001,
+          "name": "Hydraulic Press A1",
+          "description": "Primary hydraulic press for chassis rails.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1001,
+          "mpId": 2001,
+          "statuses": [
+            {
+              "serviceId": 20011,
+              "serviceName": "Hydraulic Safety Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20012,
+              "serviceName": "Hydraulic Safety Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-01-19T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2002,
+      "code": "MP-2002",
+      "name": "Gun Calibration",
+      "description": "Calibrate robotic spot weld guns.",
+      "metricType": "DAYS",
+      "targetValue": 14,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-01-04T00:00:00Z",
+      "updatedDate": "2024-01-24T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20021,
+          "name": "Gun Calibration Task 1",
+          "serviceDescription": "Calibrate robotic spot weld guns. - step 1",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20022,
+          "name": "Gun Calibration Task 2",
+          "serviceDescription": "Calibrate robotic spot weld guns. - step 2",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1002,
+          "name": "Spot Welder BX",
+          "description": "Dual-gun robotic welder for floor panels.",
+          "status": 4,
+          "isActive": false
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1002,
+          "mpId": 2002,
+          "statuses": [
+            {
+              "serviceId": 20021,
+              "serviceName": "Gun Calibration Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-01-23T00:00:00Z"
+            },
+            {
+              "serviceId": 20022,
+              "serviceName": "Gun Calibration Task 2",
+              "isCompleted": false,
+              "completedOn": null
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2003,
+      "code": "MP-2003",
+      "name": "Filter Swap",
+      "description": "Replace booth intake and exhaust filters.",
+      "metricType": "DAYS",
+      "targetValue": 30,
+      "isActive": false,
+      "status": "INACTIVE",
+      "createdDate": "2024-01-07T00:00:00Z",
+      "updatedDate": "2024-01-27T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20031,
+          "name": "Filter Swap Task 1",
+          "serviceDescription": "Replace booth intake and exhaust filters. - step 1",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20032,
+          "name": "Filter Swap Task 2",
+          "serviceDescription": "Replace booth intake and exhaust filters. - step 2",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1003,
+          "name": "Powder Booth P3",
+          "description": "Closed-loop powder coating booth.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1003,
+          "mpId": 2003,
+          "statuses": [
+            {
+              "serviceId": 20031,
+              "serviceName": "Filter Swap Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-01-26T00:00:00Z"
+            },
+            {
+              "serviceId": 20032,
+              "serviceName": "Filter Swap Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-01-25T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2004,
+      "code": "MP-2004",
+      "name": "Chain Tension",
+      "description": "Verify conveyor chains, guides and sensors.",
+      "metricType": "DAYS",
+      "targetValue": 15,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-01-10T00:00:00Z",
+      "updatedDate": "2024-01-30T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20041,
+          "name": "Chain Tension Task 1",
+          "serviceDescription": "Verify conveyor chains, guides and sensors. - step 1",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20042,
+          "name": "Chain Tension Task 2",
+          "serviceDescription": "Verify conveyor chains, guides and sensors. - step 2",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1004,
+          "name": "Assembly Conveyor C1",
+          "description": "Main pallet conveyor for assembly hall.",
+          "status": 3,
+          "isActive": false
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1004,
+          "mpId": 2004,
+          "statuses": [
+            {
+              "serviceId": 20041,
+              "serviceName": "Chain Tension Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20042,
+              "serviceName": "Chain Tension Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-01-28T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2005,
+      "code": "MP-2005",
+      "name": "Lubrication Cycle",
+      "description": "Top off lubrication reservoirs and purge lines.",
+      "metricType": "DAYS",
+      "targetValue": 90,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-01-13T00:00:00Z",
+      "updatedDate": "2024-02-02T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20051,
+          "name": "Lubrication Cycle Task 1",
+          "serviceDescription": "Top off lubrication reservoirs and purge lines. - step 1",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20052,
+          "name": "Lubrication Cycle Task 2",
+          "serviceDescription": "Top off lubrication reservoirs and purge lines. - step 2",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1001,
+          "name": "Hydraulic Press A1",
+          "description": "Primary hydraulic press for chassis rails.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1001,
+          "mpId": 2005,
+          "statuses": [
+            {
+              "serviceId": 20051,
+              "serviceName": "Lubrication Cycle Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-02-01T00:00:00Z"
+            },
+            {
+              "serviceId": 20052,
+              "serviceName": "Lubrication Cycle Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-01-31T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 0,
+      "mpTime": false
+    },
+    {
+      "id": 2006,
+      "code": "MP-2006",
+      "name": "Cooling Loop Check",
+      "description": "Flush welder cooling manifolds.",
+      "metricType": "DAYS",
+      "targetValue": 180,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-01-16T00:00:00Z",
+      "updatedDate": "2024-02-05T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20061,
+          "name": "Cooling Loop Check Task 1",
+          "serviceDescription": "Flush welder cooling manifolds. - step 1",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20062,
+          "name": "Cooling Loop Check Task 2",
+          "serviceDescription": "Flush welder cooling manifolds. - step 2",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1002,
+          "name": "Spot Welder BX",
+          "description": "Dual-gun robotic welder for floor panels.",
+          "status": 4,
+          "isActive": false
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1002,
+          "mpId": 2006,
+          "statuses": [
+            {
+              "serviceId": 20061,
+              "serviceName": "Cooling Loop Check Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20062,
+              "serviceName": "Cooling Loop Check Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-02-03T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2007,
+      "code": "MP-2007",
+      "name": "Booth Deep Clean",
+      "description": "Full booth wash down and reclaim purge.",
+      "metricType": "DAYS",
+      "targetValue": 60,
+      "isActive": false,
+      "status": "INACTIVE",
+      "createdDate": "2024-01-19T00:00:00Z",
+      "updatedDate": "2024-02-08T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20071,
+          "name": "Booth Deep Clean Task 1",
+          "serviceDescription": "Full booth wash down and reclaim purge. - step 1",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20072,
+          "name": "Booth Deep Clean Task 2",
+          "serviceDescription": "Full booth wash down and reclaim purge. - step 2",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1003,
+          "name": "Powder Booth P3",
+          "description": "Closed-loop powder coating booth.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1003,
+          "mpId": 2007,
+          "statuses": [
+            {
+              "serviceId": 20071,
+              "serviceName": "Booth Deep Clean Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-02-07T00:00:00Z"
+            },
+            {
+              "serviceId": 20072,
+              "serviceName": "Booth Deep Clean Task 2",
+              "isCompleted": false,
+              "completedOn": null
+            }
+          ]
+        }
+      ],
+      "countReached": 0,
+      "mpTime": false
+    },
+    {
+      "id": 2008,
+      "code": "MP-2008",
+      "name": "Drive Inspection",
+      "description": "Inspect conveyor drives and couplings.",
+      "metricType": "DAYS",
+      "targetValue": 120,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-01-22T00:00:00Z",
+      "updatedDate": "2024-02-11T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20081,
+          "name": "Drive Inspection Task 1",
+          "serviceDescription": "Inspect conveyor drives and couplings. - step 1",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20082,
+          "name": "Drive Inspection Task 2",
+          "serviceDescription": "Inspect conveyor drives and couplings. - step 2",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1004,
+          "name": "Assembly Conveyor C1",
+          "description": "Main pallet conveyor for assembly hall.",
+          "status": 3,
+          "isActive": false
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1004,
+          "mpId": 2008,
+          "statuses": [
+            {
+              "serviceId": 20081,
+              "serviceName": "Drive Inspection Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-02-10T00:00:00Z"
+            },
+            {
+              "serviceId": 20082,
+              "serviceName": "Drive Inspection Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-02-09T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2009,
+      "code": "MP-2009",
+      "name": "Calibration",
+      "description": "Calibrate torque tools.",
+      "metricType": "DAYS",
+      "targetValue": 30,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-01-25T00:00:00Z",
+      "updatedDate": "2024-02-14T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20091,
+          "name": "Calibration Task 1",
+          "serviceDescription": "Calibrate torque tools. - step 1",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20092,
+          "name": "Calibration Task 2",
+          "serviceDescription": "Calibrate torque tools. - step 2",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1005,
+          "name": "Torque Station TS7",
+          "description": "Smart torque guns for drivetrain.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1005,
+          "mpId": 2009,
+          "statuses": [
+            {
+              "serviceId": 20091,
+              "serviceName": "Calibration Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20092,
+              "serviceName": "Calibration Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-02-12T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2010,
+      "code": "MP-2010",
+      "name": "Battery Refresh",
+      "description": "Swap torque gun battery packs.",
+      "metricType": "DAYS",
+      "targetValue": 14,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-01-28T00:00:00Z",
+      "updatedDate": "2024-02-17T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20101,
+          "name": "Battery Refresh Task 1",
+          "serviceDescription": "Swap torque gun battery packs. - step 1",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20102,
+          "name": "Battery Refresh Task 2",
+          "serviceDescription": "Swap torque gun battery packs. - step 2",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1005,
+          "name": "Torque Station TS7",
+          "description": "Smart torque guns for drivetrain.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1005,
+          "mpId": 2010,
+          "statuses": [
+            {
+              "serviceId": 20101,
+              "serviceName": "Battery Refresh Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-02-16T00:00:00Z"
+            },
+            {
+              "serviceId": 20102,
+              "serviceName": "Battery Refresh Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-02-15T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 0,
+      "mpTime": false
+    },
+    {
+      "id": 2011,
+      "code": "MP-2011",
+      "name": "Axis Alignment",
+      "description": "Run CNC alignment and backlash tests.",
+      "metricType": "DAYS",
+      "targetValue": 45,
+      "isActive": false,
+      "status": "INACTIVE",
+      "createdDate": "2024-01-31T00:00:00Z",
+      "updatedDate": "2024-02-20T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20111,
+          "name": "Axis Alignment Task 1",
+          "serviceDescription": "Run CNC alignment and backlash tests. - step 1",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20112,
+          "name": "Axis Alignment Task 2",
+          "serviceDescription": "Run CNC alignment and backlash tests. - step 2",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1006,
+          "name": "CNC Mill VMX",
+          "description": "4-axis CNC for fixtures.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1006,
+          "mpId": 2011,
+          "statuses": [
+            {
+              "serviceId": 20111,
+              "serviceName": "Axis Alignment Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20112,
+              "serviceName": "Axis Alignment Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-02-18T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2012,
+      "code": "MP-2012",
+      "name": "Coolant Quality",
+      "description": "Check coolant chemistry and filters.",
+      "metricType": "DAYS",
+      "targetValue": 30,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-02-03T00:00:00Z",
+      "updatedDate": "2024-02-23T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20121,
+          "name": "Coolant Quality Task 1",
+          "serviceDescription": "Check coolant chemistry and filters. - step 1",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20122,
+          "name": "Coolant Quality Task 2",
+          "serviceDescription": "Check coolant chemistry and filters. - step 2",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1006,
+          "name": "CNC Mill VMX",
+          "description": "4-axis CNC for fixtures.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1006,
+          "mpId": 2012,
+          "statuses": [
+            {
+              "serviceId": 20121,
+              "serviceName": "Coolant Quality Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-02-22T00:00:00Z"
+            },
+            {
+              "serviceId": 20122,
+              "serviceName": "Coolant Quality Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-02-21T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 0,
+      "mpTime": false
+    },
+    {
+      "id": 2013,
+      "code": "MP-2013",
+      "name": "Door Seal Check",
+      "description": "Inspect autoclave seals and hinges.",
+      "metricType": "DAYS",
+      "targetValue": 60,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-02-06T00:00:00Z",
+      "updatedDate": "2024-02-26T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20131,
+          "name": "Door Seal Check Task 1",
+          "serviceDescription": "Inspect autoclave seals and hinges. - step 1",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20132,
+          "name": "Door Seal Check Task 2",
+          "serviceDescription": "Inspect autoclave seals and hinges. - step 2",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1007,
+          "name": "Autoclave AC2",
+          "description": "Composite curing autoclave.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1007,
+          "mpId": 2013,
+          "statuses": [
+            {
+              "serviceId": 20131,
+              "serviceName": "Door Seal Check Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20132,
+              "serviceName": "Door Seal Check Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-02-24T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2014,
+      "code": "MP-2014",
+      "name": "Calibration Cycle",
+      "description": "Validate thermocouples and pressure probes.",
+      "metricType": "DAYS",
+      "targetValue": 120,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-02-09T00:00:00Z",
+      "updatedDate": "2024-02-29T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20141,
+          "name": "Calibration Cycle Task 1",
+          "serviceDescription": "Validate thermocouples and pressure probes. - step 1",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20142,
+          "name": "Calibration Cycle Task 2",
+          "serviceDescription": "Validate thermocouples and pressure probes. - step 2",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1007,
+          "name": "Autoclave AC2",
+          "description": "Composite curing autoclave.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1007,
+          "mpId": 2014,
+          "statuses": [
+            {
+              "serviceId": 20141,
+              "serviceName": "Calibration Cycle Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-02-28T00:00:00Z"
+            },
+            {
+              "serviceId": 20142,
+              "serviceName": "Calibration Cycle Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-02-27T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 0,
+      "mpTime": false
+    },
+    {
+      "id": 2015,
+      "code": "MP-2015",
+      "name": "Chiller PM",
+      "description": "Inspect compressors, oil and controls.",
+      "metricType": "DAYS",
+      "targetValue": 45,
+      "isActive": false,
+      "status": "INACTIVE",
+      "createdDate": "2024-02-12T00:00:00Z",
+      "updatedDate": "2024-03-03T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20151,
+          "name": "Chiller PM Task 1",
+          "serviceDescription": "Inspect compressors, oil and controls. - step 1",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20152,
+          "name": "Chiller PM Task 2",
+          "serviceDescription": "Inspect compressors, oil and controls. - step 2",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1008,
+          "name": "HVAC Chiller CH5",
+          "description": "Central chilled water unit.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1008,
+          "mpId": 2015,
+          "statuses": [
+            {
+              "serviceId": 20151,
+              "serviceName": "Chiller PM Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20152,
+              "serviceName": "Chiller PM Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-01T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2016,
+      "code": "MP-2016",
+      "name": "Water Treatment",
+      "description": "Verify glycol mix and strainers.",
+      "metricType": "DAYS",
+      "targetValue": 60,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-02-15T00:00:00Z",
+      "updatedDate": "2024-03-06T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20161,
+          "name": "Water Treatment Task 1",
+          "serviceDescription": "Verify glycol mix and strainers. - step 1",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20162,
+          "name": "Water Treatment Task 2",
+          "serviceDescription": "Verify glycol mix and strainers. - step 2",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1008,
+          "name": "HVAC Chiller CH5",
+          "description": "Central chilled water unit.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1008,
+          "mpId": 2016,
+          "statuses": [
+            {
+              "serviceId": 20161,
+              "serviceName": "Water Treatment Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-03-05T00:00:00Z"
+            },
+            {
+              "serviceId": 20162,
+              "serviceName": "Water Treatment Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-04T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2017,
+      "code": "MP-2017",
+      "name": "Battery Rotation",
+      "description": "Equalize AGV battery packs.",
+      "metricType": "DAYS",
+      "targetValue": 7,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-02-18T00:00:00Z",
+      "updatedDate": "2024-03-09T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20171,
+          "name": "Battery Rotation Task 1",
+          "serviceDescription": "Equalize AGV battery packs. - step 1",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20172,
+          "name": "Battery Rotation Task 2",
+          "serviceDescription": "Equalize AGV battery packs. - step 2",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1009,
+          "name": "AGV Fleet",
+          "description": "12 automated guided vehicles.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1009,
+          "mpId": 2017,
+          "statuses": [
+            {
+              "serviceId": 20171,
+              "serviceName": "Battery Rotation Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20172,
+              "serviceName": "Battery Rotation Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-07T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2018,
+      "code": "MP-2018",
+      "name": "Sensor Health",
+      "description": "Inspect AGV safeties and scanners.",
+      "metricType": "DAYS",
+      "targetValue": 30,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-02-21T00:00:00Z",
+      "updatedDate": "2024-03-12T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20181,
+          "name": "Sensor Health Task 1",
+          "serviceDescription": "Inspect AGV safeties and scanners. - step 1",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20182,
+          "name": "Sensor Health Task 2",
+          "serviceDescription": "Inspect AGV safeties and scanners. - step 2",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1009,
+          "name": "AGV Fleet",
+          "description": "12 automated guided vehicles.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1009,
+          "mpId": 2018,
+          "statuses": [
+            {
+              "serviceId": 20181,
+              "serviceName": "Sensor Health Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-03-11T00:00:00Z"
+            },
+            {
+              "serviceId": 20182,
+              "serviceName": "Sensor Health Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-10T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 0,
+      "mpTime": false
+    },
+    {
+      "id": 2019,
+      "code": "MP-2019",
+      "name": "Sensor Calibration",
+      "description": "Calibrate thermal bench sensors.",
+      "metricType": "DAYS",
+      "targetValue": 30,
+      "isActive": false,
+      "status": "INACTIVE",
+      "createdDate": "2024-02-24T00:00:00Z",
+      "updatedDate": "2024-03-15T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20191,
+          "name": "Sensor Calibration Task 1",
+          "serviceDescription": "Calibrate thermal bench sensors. - step 1",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20192,
+          "name": "Sensor Calibration Task 2",
+          "serviceDescription": "Calibrate thermal bench sensors. - step 2",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1010,
+          "name": "Test Bench TB4",
+          "description": "Thermal cycling bench.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1010,
+          "mpId": 2019,
+          "statuses": [
+            {
+              "serviceId": 20191,
+              "serviceName": "Sensor Calibration Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20192,
+              "serviceName": "Sensor Calibration Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-13T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2020,
+      "code": "MP-2020",
+      "name": "Fixture Inspection",
+      "description": "Inspect clamps and connectors.",
+      "metricType": "DAYS",
+      "targetValue": 45,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-02-27T00:00:00Z",
+      "updatedDate": "2024-03-18T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20201,
+          "name": "Fixture Inspection Task 1",
+          "serviceDescription": "Inspect clamps and connectors. - step 1",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20202,
+          "name": "Fixture Inspection Task 2",
+          "serviceDescription": "Inspect clamps and connectors. - step 2",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1010,
+          "name": "Test Bench TB4",
+          "description": "Thermal cycling bench.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1010,
+          "mpId": 2020,
+          "statuses": [
+            {
+              "serviceId": 20201,
+              "serviceName": "Fixture Inspection Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-03-17T00:00:00Z"
+            },
+            {
+              "serviceId": 20202,
+              "serviceName": "Fixture Inspection Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-16T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2021,
+      "code": "MP-2021",
+      "name": "Extruder Clean",
+      "description": "Purge printer extruders.",
+      "metricType": "DAYS",
+      "targetValue": 14,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-03-01T00:00:00Z",
+      "updatedDate": "2024-03-21T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20211,
+          "name": "Extruder Clean Task 1",
+          "serviceDescription": "Purge printer extruders. - step 1",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20212,
+          "name": "Extruder Clean Task 2",
+          "serviceDescription": "Purge printer extruders. - step 2",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1011,
+          "name": "3D Printer Farm",
+          "description": "Additive lab with 6 printers.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1011,
+          "mpId": 2021,
+          "statuses": [
+            {
+              "serviceId": 20211,
+              "serviceName": "Extruder Clean Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20212,
+              "serviceName": "Extruder Clean Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-19T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2022,
+      "code": "MP-2022",
+      "name": "Bed Alignment",
+      "description": "Level additive build plates.",
+      "metricType": "DAYS",
+      "targetValue": 21,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-03-04T00:00:00Z",
+      "updatedDate": "2024-03-24T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20221,
+          "name": "Bed Alignment Task 1",
+          "serviceDescription": "Level additive build plates. - step 1",
+          "serviceType": "CHECKUP",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20222,
+          "name": "Bed Alignment Task 2",
+          "serviceDescription": "Level additive build plates. - step 2",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1011,
+          "name": "3D Printer Farm",
+          "description": "Additive lab with 6 printers.",
+          "status": 1,
+          "isActive": true
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1011,
+          "mpId": 2022,
+          "statuses": [
+            {
+              "serviceId": 20221,
+              "serviceName": "Bed Alignment Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-03-23T00:00:00Z"
+            },
+            {
+              "serviceId": 20222,
+              "serviceName": "Bed Alignment Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-22T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 0,
+      "mpTime": false
+    },
+    {
+      "id": 2023,
+      "code": "MP-2023",
+      "name": "Optics Clean",
+      "description": "Clean all laser optics.",
+      "metricType": "DAYS",
+      "targetValue": 30,
+      "isActive": false,
+      "status": "INACTIVE",
+      "createdDate": "2024-03-07T00:00:00Z",
+      "updatedDate": "2024-03-27T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20231,
+          "name": "Optics Clean Task 1",
+          "serviceDescription": "Clean all laser optics. - step 1",
+          "serviceType": "REPLACE",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20232,
+          "name": "Optics Clean Task 2",
+          "serviceDescription": "Clean all laser optics. - step 2",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1012,
+          "name": "Laser Cutter LC1",
+          "description": "High-power laser cutter for sheet metal.",
+          "status": 2,
+          "isActive": false
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1012,
+          "mpId": 2023,
+          "statuses": [
+            {
+              "serviceId": 20231,
+              "serviceName": "Optics Clean Task 1",
+              "isCompleted": false,
+              "completedOn": null
+            },
+            {
+              "serviceId": 20232,
+              "serviceName": "Optics Clean Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-25T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 1,
+      "mpTime": true
+    },
+    {
+      "id": 2024,
+      "code": "MP-2024",
+      "name": "Beam Alignment",
+      "description": "Verify laser beam delivery.",
+      "metricType": "DAYS",
+      "targetValue": 45,
+      "isActive": true,
+      "status": "ACTIVE",
+      "createdDate": "2024-03-10T00:00:00Z",
+      "updatedDate": "2024-03-30T00:00:00Z",
+      "createdBy": "system",
+      "modifiedBy": "planner",
+      "services": [
+        {
+          "id": 20241,
+          "name": "Beam Alignment Task 1",
+          "serviceDescription": "Verify laser beam delivery. - step 1",
+          "serviceType": "REFILL",
+          "estimatedDurationMin": 45
+        },
+        {
+          "id": 20242,
+          "name": "Beam Alignment Task 2",
+          "serviceDescription": "Verify laser beam delivery. - step 2",
+          "serviceType": "INSPECTION",
+          "estimatedDurationMin": 60
+        }
+      ],
+      "equipments": [
+        {
+          "id": 1012,
+          "name": "Laser Cutter LC1",
+          "description": "High-power laser cutter for sheet metal.",
+          "status": 2,
+          "isActive": false
+        }
+      ],
+      "serviceStatuses": [
+        {
+          "equipmentId": 1012,
+          "mpId": 2024,
+          "statuses": [
+            {
+              "serviceId": 20241,
+              "serviceName": "Beam Alignment Task 1",
+              "isCompleted": true,
+              "completedOn": "2024-03-29T00:00:00Z"
+            },
+            {
+              "serviceId": 20242,
+              "serviceName": "Beam Alignment Task 2",
+              "isCompleted": true,
+              "completedOn": "2024-03-28T00:00:00Z"
+            }
+          ]
+        }
+      ],
+      "countReached": 0,
+      "mpTime": false
+    }
+  ],
+  "serviceLibrary": [
+    {
+      "id": 20011,
+      "name": "Hydraulic Safety Task 1",
+      "serviceDescription": "Inspect hydraulic hoses and safety interlocks. - step 1",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2001,
+      "planName": "Hydraulic Safety",
+      "isActive": true
+    },
+    {
+      "id": 20012,
+      "name": "Hydraulic Safety Task 2",
+      "serviceDescription": "Inspect hydraulic hoses and safety interlocks. - step 2",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2001,
+      "planName": "Hydraulic Safety",
+      "isActive": true
+    },
+    {
+      "id": 20021,
+      "name": "Gun Calibration Task 1",
+      "serviceDescription": "Calibrate robotic spot weld guns. - step 1",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2002,
+      "planName": "Gun Calibration",
+      "isActive": true
+    },
+    {
+      "id": 20022,
+      "name": "Gun Calibration Task 2",
+      "serviceDescription": "Calibrate robotic spot weld guns. - step 2",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2002,
+      "planName": "Gun Calibration",
+      "isActive": true
+    },
+    {
+      "id": 20031,
+      "name": "Filter Swap Task 1",
+      "serviceDescription": "Replace booth intake and exhaust filters. - step 1",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2003,
+      "planName": "Filter Swap",
+      "isActive": false
+    },
+    {
+      "id": 20032,
+      "name": "Filter Swap Task 2",
+      "serviceDescription": "Replace booth intake and exhaust filters. - step 2",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2003,
+      "planName": "Filter Swap",
+      "isActive": false
+    },
+    {
+      "id": 20041,
+      "name": "Chain Tension Task 1",
+      "serviceDescription": "Verify conveyor chains, guides and sensors. - step 1",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2004,
+      "planName": "Chain Tension",
+      "isActive": true
+    },
+    {
+      "id": 20042,
+      "name": "Chain Tension Task 2",
+      "serviceDescription": "Verify conveyor chains, guides and sensors. - step 2",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2004,
+      "planName": "Chain Tension",
+      "isActive": true
+    },
+    {
+      "id": 20051,
+      "name": "Lubrication Cycle Task 1",
+      "serviceDescription": "Top off lubrication reservoirs and purge lines. - step 1",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2005,
+      "planName": "Lubrication Cycle",
+      "isActive": true
+    },
+    {
+      "id": 20052,
+      "name": "Lubrication Cycle Task 2",
+      "serviceDescription": "Top off lubrication reservoirs and purge lines. - step 2",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2005,
+      "planName": "Lubrication Cycle",
+      "isActive": true
+    },
+    {
+      "id": 20061,
+      "name": "Cooling Loop Check Task 1",
+      "serviceDescription": "Flush welder cooling manifolds. - step 1",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2006,
+      "planName": "Cooling Loop Check",
+      "isActive": true
+    },
+    {
+      "id": 20062,
+      "name": "Cooling Loop Check Task 2",
+      "serviceDescription": "Flush welder cooling manifolds. - step 2",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2006,
+      "planName": "Cooling Loop Check",
+      "isActive": true
+    },
+    {
+      "id": 20071,
+      "name": "Booth Deep Clean Task 1",
+      "serviceDescription": "Full booth wash down and reclaim purge. - step 1",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2007,
+      "planName": "Booth Deep Clean",
+      "isActive": false
+    },
+    {
+      "id": 20072,
+      "name": "Booth Deep Clean Task 2",
+      "serviceDescription": "Full booth wash down and reclaim purge. - step 2",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2007,
+      "planName": "Booth Deep Clean",
+      "isActive": false
+    },
+    {
+      "id": 20081,
+      "name": "Drive Inspection Task 1",
+      "serviceDescription": "Inspect conveyor drives and couplings. - step 1",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2008,
+      "planName": "Drive Inspection",
+      "isActive": true
+    },
+    {
+      "id": 20082,
+      "name": "Drive Inspection Task 2",
+      "serviceDescription": "Inspect conveyor drives and couplings. - step 2",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2008,
+      "planName": "Drive Inspection",
+      "isActive": true
+    },
+    {
+      "id": 20091,
+      "name": "Calibration Task 1",
+      "serviceDescription": "Calibrate torque tools. - step 1",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2009,
+      "planName": "Calibration",
+      "isActive": true
+    },
+    {
+      "id": 20092,
+      "name": "Calibration Task 2",
+      "serviceDescription": "Calibrate torque tools. - step 2",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2009,
+      "planName": "Calibration",
+      "isActive": true
+    },
+    {
+      "id": 20101,
+      "name": "Battery Refresh Task 1",
+      "serviceDescription": "Swap torque gun battery packs. - step 1",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2010,
+      "planName": "Battery Refresh",
+      "isActive": true
+    },
+    {
+      "id": 20102,
+      "name": "Battery Refresh Task 2",
+      "serviceDescription": "Swap torque gun battery packs. - step 2",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2010,
+      "planName": "Battery Refresh",
+      "isActive": true
+    },
+    {
+      "id": 20111,
+      "name": "Axis Alignment Task 1",
+      "serviceDescription": "Run CNC alignment and backlash tests. - step 1",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2011,
+      "planName": "Axis Alignment",
+      "isActive": false
+    },
+    {
+      "id": 20112,
+      "name": "Axis Alignment Task 2",
+      "serviceDescription": "Run CNC alignment and backlash tests. - step 2",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2011,
+      "planName": "Axis Alignment",
+      "isActive": false
+    },
+    {
+      "id": 20121,
+      "name": "Coolant Quality Task 1",
+      "serviceDescription": "Check coolant chemistry and filters. - step 1",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2012,
+      "planName": "Coolant Quality",
+      "isActive": true
+    },
+    {
+      "id": 20122,
+      "name": "Coolant Quality Task 2",
+      "serviceDescription": "Check coolant chemistry and filters. - step 2",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2012,
+      "planName": "Coolant Quality",
+      "isActive": true
+    },
+    {
+      "id": 20131,
+      "name": "Door Seal Check Task 1",
+      "serviceDescription": "Inspect autoclave seals and hinges. - step 1",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2013,
+      "planName": "Door Seal Check",
+      "isActive": true
+    },
+    {
+      "id": 20132,
+      "name": "Door Seal Check Task 2",
+      "serviceDescription": "Inspect autoclave seals and hinges. - step 2",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2013,
+      "planName": "Door Seal Check",
+      "isActive": true
+    },
+    {
+      "id": 20141,
+      "name": "Calibration Cycle Task 1",
+      "serviceDescription": "Validate thermocouples and pressure probes. - step 1",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2014,
+      "planName": "Calibration Cycle",
+      "isActive": true
+    },
+    {
+      "id": 20142,
+      "name": "Calibration Cycle Task 2",
+      "serviceDescription": "Validate thermocouples and pressure probes. - step 2",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2014,
+      "planName": "Calibration Cycle",
+      "isActive": true
+    },
+    {
+      "id": 20151,
+      "name": "Chiller PM Task 1",
+      "serviceDescription": "Inspect compressors, oil and controls. - step 1",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2015,
+      "planName": "Chiller PM",
+      "isActive": false
+    },
+    {
+      "id": 20152,
+      "name": "Chiller PM Task 2",
+      "serviceDescription": "Inspect compressors, oil and controls. - step 2",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2015,
+      "planName": "Chiller PM",
+      "isActive": false
+    },
+    {
+      "id": 20161,
+      "name": "Water Treatment Task 1",
+      "serviceDescription": "Verify glycol mix and strainers. - step 1",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2016,
+      "planName": "Water Treatment",
+      "isActive": true
+    },
+    {
+      "id": 20162,
+      "name": "Water Treatment Task 2",
+      "serviceDescription": "Verify glycol mix and strainers. - step 2",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2016,
+      "planName": "Water Treatment",
+      "isActive": true
+    },
+    {
+      "id": 20171,
+      "name": "Battery Rotation Task 1",
+      "serviceDescription": "Equalize AGV battery packs. - step 1",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2017,
+      "planName": "Battery Rotation",
+      "isActive": true
+    },
+    {
+      "id": 20172,
+      "name": "Battery Rotation Task 2",
+      "serviceDescription": "Equalize AGV battery packs. - step 2",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2017,
+      "planName": "Battery Rotation",
+      "isActive": true
+    },
+    {
+      "id": 20181,
+      "name": "Sensor Health Task 1",
+      "serviceDescription": "Inspect AGV safeties and scanners. - step 1",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2018,
+      "planName": "Sensor Health",
+      "isActive": true
+    },
+    {
+      "id": 20182,
+      "name": "Sensor Health Task 2",
+      "serviceDescription": "Inspect AGV safeties and scanners. - step 2",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2018,
+      "planName": "Sensor Health",
+      "isActive": true
+    },
+    {
+      "id": 20191,
+      "name": "Sensor Calibration Task 1",
+      "serviceDescription": "Calibrate thermal bench sensors. - step 1",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2019,
+      "planName": "Sensor Calibration",
+      "isActive": false
+    },
+    {
+      "id": 20192,
+      "name": "Sensor Calibration Task 2",
+      "serviceDescription": "Calibrate thermal bench sensors. - step 2",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2019,
+      "planName": "Sensor Calibration",
+      "isActive": false
+    },
+    {
+      "id": 20201,
+      "name": "Fixture Inspection Task 1",
+      "serviceDescription": "Inspect clamps and connectors. - step 1",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2020,
+      "planName": "Fixture Inspection",
+      "isActive": true
+    },
+    {
+      "id": 20202,
+      "name": "Fixture Inspection Task 2",
+      "serviceDescription": "Inspect clamps and connectors. - step 2",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2020,
+      "planName": "Fixture Inspection",
+      "isActive": true
+    },
+    {
+      "id": 20211,
+      "name": "Extruder Clean Task 1",
+      "serviceDescription": "Purge printer extruders. - step 1",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2021,
+      "planName": "Extruder Clean",
+      "isActive": true
+    },
+    {
+      "id": 20212,
+      "name": "Extruder Clean Task 2",
+      "serviceDescription": "Purge printer extruders. - step 2",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2021,
+      "planName": "Extruder Clean",
+      "isActive": true
+    },
+    {
+      "id": 20221,
+      "name": "Bed Alignment Task 1",
+      "serviceDescription": "Level additive build plates. - step 1",
+      "serviceType": "CHECKUP",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2022,
+      "planName": "Bed Alignment",
+      "isActive": true
+    },
+    {
+      "id": 20222,
+      "name": "Bed Alignment Task 2",
+      "serviceDescription": "Level additive build plates. - step 2",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2022,
+      "planName": "Bed Alignment",
+      "isActive": true
+    },
+    {
+      "id": 20231,
+      "name": "Optics Clean Task 1",
+      "serviceDescription": "Clean all laser optics. - step 1",
+      "serviceType": "REPLACE",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2023,
+      "planName": "Optics Clean",
+      "isActive": false
+    },
+    {
+      "id": 20232,
+      "name": "Optics Clean Task 2",
+      "serviceDescription": "Clean all laser optics. - step 2",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2023,
+      "planName": "Optics Clean",
+      "isActive": false
+    },
+    {
+      "id": 20241,
+      "name": "Beam Alignment Task 1",
+      "serviceDescription": "Verify laser beam delivery. - step 1",
+      "serviceType": "REFILL",
+      "estimatedDurationMin": 45,
+      "maintenancePlanId": 2024,
+      "planName": "Beam Alignment",
+      "isActive": true
+    },
+    {
+      "id": 20242,
+      "name": "Beam Alignment Task 2",
+      "serviceDescription": "Verify laser beam delivery. - step 2",
+      "serviceType": "INSPECTION",
+      "estimatedDurationMin": 60,
+      "maintenancePlanId": 2024,
+      "planName": "Beam Alignment",
+      "isActive": true
+    }
+  ],
+  "metricTypes": [
+    "HOURS",
+    "DAYS",
+    "CYCLES",
+    "STARTS"
+  ]
+}

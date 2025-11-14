@@ -1,0 +1,16 @@
+.department-main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+
+  .dep-mid {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+  .page-content {
+    width: 75%;
+  }
+}

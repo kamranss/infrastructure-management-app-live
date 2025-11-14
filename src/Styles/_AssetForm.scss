@@ -1,0 +1,34 @@
+.FormMain {
+  height: 70%;
+  background-color: white;
+  .FormContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .FormLeftSide {
+      margin-left: 1rem;
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+    }
+    .FormRightSide {
+      margin-right: 5rem;
+      width: 20%;
+    }
+  }
+}
+
+.heading {
+  margin-left: 1rem;
+}
+.MenuItem {
+  margin-top: 40%;
+}
+
+.validation-error {
+  color: red;
+}
+
+.input-error {
+  border: 1px solid red;
+}

@@ -1,0 +1,10 @@
+.export {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .fa-solid {
+    color: rgb(4, 29, 4);
+    font-size: 2rem;
+  }
+}

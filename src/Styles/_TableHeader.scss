@@ -1,0 +1,27 @@
+.tableHeadContainer {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  background-color: white;
+  padding: 12px;
+  .tableHead {
+    // width: 40%;
+    // border: solid #009688 0.1rem;
+    // background: #6926d7;
+    background-color: #89c0ec;
+    // background-color: #025e73;
+    border-radius: 0.3rem;
+    padding: 1rem;
+    display: flex;
+    .tableHeadBox {
+      width: 20%;
+      display: flex;
+      justify-content: space-between;
+      .header_nav_icon {
+        i {
+          color: white;
+          font-size: large;
+        }
+      }
+    }
+  }
+}

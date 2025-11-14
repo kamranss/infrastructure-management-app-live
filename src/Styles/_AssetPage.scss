@@ -1,0 +1,48 @@
+.asset-page-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1.5rem 0 1rem 0;
+  height: 4rem;
+  background-color: #e9e5f0;
+  align-items: center;
+  padding-left: 1rem;
+
+  .filter-input {
+    width: 14rem;
+    background-color: #dae6ec;
+    height: 80%;
+    padding: 0.4rem 0.6rem;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+
+    &:focus {
+      border: 1px solid #1976d2;
+      box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+    }
+  }
+
+  .mp-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+  }
+}
+
+.blinking-icon {
+  color: red;
+  animation: blink 1s step-start infinite;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}

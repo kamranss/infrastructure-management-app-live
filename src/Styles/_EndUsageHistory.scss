@@ -1,0 +1,26 @@
+.uh_Form_Container {
+  margin-top: 3rem;
+}
+
+.formGroup {
+  margin-bottom: 20px; /* Add margin between form fields */
+}
+
+.inputRoot {
+  border: 1px solid #ccc;
+  padding: 10px; /* Add padding to create space for the border */
+  transition: border-color 0.2s;
+  margin-bottom: 10px;
+}
+
+.inputFocused {
+  border-color: #007bff; /* Change border color when input is focused */
+}
+
+.my-swal-modal {
+  /* Your custom styles for the SweetAlert2 modal */
+  background-color: #fff;
+  border: 2px solid #000;
+  z-index: 1000000000;
+  /* Add any other styles you need */
+}

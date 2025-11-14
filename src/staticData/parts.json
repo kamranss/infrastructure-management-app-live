@@ -1,0 +1,158 @@
+{
+  "items": [
+    {
+      "id": 4001,
+      "code": "OIL-FLTR",
+      "name": "Hydraulic Oil Filter",
+      "quantity": 120,
+      "reorderLimit": 30,
+      "createdBy": "system",
+      "createdDate": "2024-01-05T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4002,
+      "code": "AIR-FLTR",
+      "name": "Booth Intake Filter",
+      "quantity": 250,
+      "reorderLimit": 80,
+      "createdBy": "system",
+      "createdDate": "2024-01-08T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4003,
+      "code": "COOL-PUMP",
+      "name": "Coolant Circulation Pump",
+      "quantity": 18,
+      "reorderLimit": 5,
+      "createdBy": "planner",
+      "createdDate": "2024-02-02T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4004,
+      "code": "MOTOR-3HP",
+      "name": "3 HP Conveyor Motor",
+      "quantity": 9,
+      "reorderLimit": 3,
+      "createdBy": "planner",
+      "createdDate": "2024-02-14T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4005,
+      "code": "BAT-AGV",
+      "name": "AGV Battery Pack",
+      "quantity": 32,
+      "reorderLimit": 12,
+      "createdBy": "system",
+      "createdDate": "2024-03-01T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4006,
+      "code": "LENS-CO2",
+      "name": "CO2 Laser Lens",
+      "quantity": 14,
+      "reorderLimit": 5,
+      "createdBy": "system",
+      "createdDate": "2024-03-15T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4007,
+      "code": "NOZZLE-POW",
+      "name": "Powder Spray Nozzle",
+      "quantity": 48,
+      "reorderLimit": 20,
+      "createdBy": "system",
+      "createdDate": "2024-04-04T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4008,
+      "code": "CHAIN-DR",
+      "name": "Drive Chain Section",
+      "quantity": 25,
+      "reorderLimit": 8,
+      "createdBy": "planner",
+      "createdDate": "2024-04-21T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4009,
+      "code": "SEAL-HT",
+      "name": "High Temp Seal",
+      "quantity": 40,
+      "reorderLimit": 16,
+      "createdBy": "planner",
+      "createdDate": "2024-05-10T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4010,
+      "code": "TIP-08",
+      "name": "Spot Weld Tip 8mm",
+      "quantity": 300,
+      "reorderLimit": 150,
+      "createdBy": "system",
+      "createdDate": "2024-05-22T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4011,
+      "code": "SENSOR-LD",
+      "name": "Lidar Safety Sensor",
+      "quantity": 11,
+      "reorderLimit": 4,
+      "createdBy": "planner",
+      "createdDate": "2024-06-07T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4012,
+      "code": "GLYCOL-55",
+      "name": "Glycol Drum 55 Gal",
+      "quantity": 22,
+      "reorderLimit": 8,
+      "createdBy": "system",
+      "createdDate": "2024-06-19T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4013,
+      "code": "THERMO-6",
+      "name": "Thermocouple Pack",
+      "quantity": 35,
+      "reorderLimit": 10,
+      "createdBy": "system",
+      "createdDate": "2024-07-02T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4014,
+      "code": "HSK-HLD",
+      "name": "HSK Tool Holder",
+      "quantity": 28,
+      "reorderLimit": 12,
+      "createdBy": "planner",
+      "createdDate": "2024-07-18T00:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4015,
+      "code": "PT100",
+      "name": "PT100 Sensor",
+      "quantity": 16,
+      "reorderLimit": 6,
+      "createdBy": "planner",
+      "createdDate": "2024-08-01T00:00:00Z",
+      "isActive": true
+    }
+  ],
+  "totalCount": 15,
+  "pageCount": 2,
+  "pageSize": 10,
+  "currentPage": 1
+}

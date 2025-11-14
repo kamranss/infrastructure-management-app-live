@@ -1,0 +1,243 @@
+.main_container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+.equipment-detail-container {
+  width: 25%;
+  margin-left: 1rem;
+  .equipment-info {
+    width: 100%;
+    height: 40%;
+    .heading {
+      background-color: #008f8c;
+      height: 100%;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h2 {
+        color: white;
+      }
+    }
+    .equipment-info-box {
+      background-color: white;
+      border-radius: 10px;
+      height: 100%;
+      margin-top: 3.6rem;
+      .info-field {
+        margin-top: 1rem;
+        margin-left: 1rem;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        .info-label {
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}
+
+.right_Side {
+  width: 70%;
+  .equipment-info-box_Status {
+    width: 100%;
+    // margin-left: 20px;
+    .info-field {
+      // display: flex;
+      // justify-content: space-between;
+      // margin-top: 1rem;
+      width: 100%;
+      // display: flex;
+      // justify-content: space-between;
+      .info-label {
+        font-weight: 500;
+      }
+      .info-valueee {
+        // background-color: #008f8c;
+        border-radius: 10px;
+        color: white;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+        font-weight: 800;
+        font-size: larger;
+        // margin-left: 10px;
+      }
+    }
+    .button_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      // height: 50%;
+      .equ_page_action-buttons_changestatus {
+        margin-top: 40px;
+        background-color: #1172ce;
+        border-radius: 5px;
+        width: 15%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          color: white;
+          font-weight: 700;
+        }
+      }
+      .equ_page_action-buttons_addPart {
+        margin-top: 40px;
+        background-color: #981ce0;
+        border-radius: 5px;
+        width: 15%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          color: white;
+          font-weight: 700;
+        }
+      }
+      .equ_page_action-buttons_addMp {
+        margin-top: 40px;
+        background-color: #0bd9e0;
+        border-radius: 5px;
+        width: 15%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          color: white;
+          font-weight: 700;
+        }
+      }
+      .equ_page_action-buttons_delete {
+        margin-top: 40px;
+        background-color: #e2202a;
+        border-radius: 5px;
+        width: 15%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          color: white;
+          font-weight: 700;
+        }
+      }
+      .equ_page_action-buttons_resetValue {
+        margin-top: 40px;
+        background-color: #049b7a;
+        border-radius: 5px;
+        width: 15%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          color: white;
+          font-weight: 700;
+        }
+      }
+      .equ_page_action-buttons_setMp {
+        margin-top: 40px;
+        background-color: #b67b0e;
+        border-radius: 5px;
+        width: 15%;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        button {
+          color: white;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+  .equipment-info-box_2 {
+    width: 99%;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    .info-field {
+      display: flex;
+      justify-content: center;
+      // margin-top: 1rem;
+      width: 100%;
+      // display: flex;
+      // justify-content: space-between;
+      .info-label {
+        font-weight: 500;
+        margin-right: 10px;
+      }
+      .info-valueee {
+        // background-color: #008f8c;
+        // border-radius: 10px;
+        color: white;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        // padding: 30px;
+        font-weight: 800;
+        font-size: larger;
+        margin-left: 10px;
+      }
+    }
+  }
+  .mp_container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    // margin-left: 40%;
+
+    .mp_list_container_mp {
+      // display: flex;
+      // justify-content: space-around;
+      // justify-content: center;
+      width: 48%;
+    }
+    .mp_list_container_part {
+      // display: flex;
+      // justify-content: space-around;
+      // justify-content: center;
+      width: 30%;
+    }
+    .list-info {
+      // display: flex;
+      // justify-content: space-around;
+      width: 18%;
+
+      .image_Main {
+        width: 100%;
+        .image_Container {
+          width: 100%;
+          // height: 60%;
+          border: 5px solid rgb(7, 121, 141);
+          border-radius: 10px;
+          .image_Box {
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+.line {
+  border: 1px solid rgb(11, 131, 139);
+  width: 90%;
+  margin-left: 5%;
+}

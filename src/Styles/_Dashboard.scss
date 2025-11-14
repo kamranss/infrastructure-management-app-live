@@ -1,0 +1,42 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 24px;
+
+  .widgets,
+  .charts,
+  .tables {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+
+    .widget,
+    .chart,
+    .table {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 20px;
+      flex: 1 1 0;
+      min-width: 260px;
+      box-shadow: var(--smaint-shadow);
+      border: 1px solid var(--smaint-border);
+    }
+  }
+
+  .widget {
+    text-align: left;
+    h3 {
+      color: var(--smaint-muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--smaint-navy);
+    }
+  }
+}

@@ -1,0 +1,98 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "Stamping & Press",
+      "departmentHead": "Maya Santos",
+      "description": "Handles high-tonnage stamping lines for chassis components.",
+      "equipments": 6,
+      "createdDate": "2023-01-15T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "name": "Body Welding",
+      "departmentHead": "Erik Bolton",
+      "description": "Automated robotic welding for frames and modules.",
+      "equipments": 8,
+      "createdDate": "2023-02-10T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 3,
+      "name": "Paint & Coating",
+      "departmentHead": "Sara Öztürk",
+      "description": "Powder coat and spray booths with drying ovens.",
+      "equipments": 5,
+      "createdDate": "2023-03-04T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 4,
+      "name": "Final Assembly",
+      "departmentHead": "John Kim",
+      "description": "Final integration of electrical and mechanical modules.",
+      "equipments": 7,
+      "createdDate": "2023-04-12T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 5,
+      "name": "Testing Lab",
+      "departmentHead": "Lucia Caron",
+      "description": "Thermal, vibration and functional validation benches.",
+      "equipments": 4,
+      "createdDate": "2023-05-05T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 6,
+      "name": "Composites",
+      "departmentHead": "Omar Haddad",
+      "description": "Autoclaves and CNC tables for composite layups.",
+      "equipments": 5,
+      "createdDate": "2023-05-27T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 7,
+      "name": "Maintenance Hub",
+      "departmentHead": "Kara Lind",
+      "description": "Centralized predictive maintenance workshop.",
+      "equipments": 9,
+      "createdDate": "2023-06-19T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 8,
+      "name": "Logistics",
+      "departmentHead": "Samuel Park",
+      "description": "Conveyors, AGVs and automated storage systems.",
+      "equipments": 6,
+      "createdDate": "2023-07-01T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 9,
+      "name": "Utilities",
+      "departmentHead": "Nisha Patel",
+      "description": "Boilers, chillers and backup power infrastructure.",
+      "equipments": 5,
+      "createdDate": "2023-08-15T08:00:00Z",
+      "isActive": true
+    },
+    {
+      "id": 10,
+      "name": "R&D Pilot Line",
+      "departmentHead": "Felix Moreno",
+      "description": "Prototype builds, sensors and quick-change tooling.",
+      "equipments": 3,
+      "createdDate": "2023-09-05T08:00:00Z",
+      "isActive": true
+    }
+  ],
+  "totalCount": 10,
+  "pageCount": 2,
+  "pageSize": 5,
+  "currentPage": 1
+}

@@ -1,0 +1,80 @@
+@use "./Styles/_Header.scss" as *;
+@use "./Styles/_Global.scss" as *;
+@use "./Styles/_HeaderNav.scss" as *;
+@use "./Styles/_Divistions.scss" as *;
+@use "./Styles/_SideBar.scss" as *;
+@use "./Styles/_Export.scss" as *;
+@use "./Styles/_TableHeader.scss" as *;
+@use "./Styles/_Table.scss" as *;
+@use "./Styles/_FormInput.scss" as *;
+@use "./styles/AssetPage" as *;
+@use "./Styles/_AssetSideBar.scss" as *;
+@use "./Styles/_AssetForm.scss" as *;
+@use "./Styles/_AssetModal.scss" as *;
+@use "./Styles/_AssetDetail.scss" as *;
+@use "./Styles/_AssetDetailModal" as *;
+@use "./Styles/_FormUsageHistory.scss" as *;
+@use "./Styles/_EndUsageHistory.scss" as *;
+@use "./Styles/_VerifyEmail.scss" as *;
+@use "./Styles/_Register.scss" as *;
+@use "./Styles/_Spinner.scss" as *;
+@use "./Styles/_Dashboard" as *;
+@use "./Styles/_MpTabs" as *;
+
+:root {
+  --smaint-primary: #0f6466;
+  --smaint-accent: #3aafa9;
+  --smaint-navy: #0a1e3c;
+  --smaint-muted: #5f6c7b;
+  --smaint-surface: #f4f7fb;
+  --smaint-surface-alt: #e7f3f1;
+  --smaint-border: #d7e5ec;
+  --smaint-shadow: 0 10px 30px rgba(10, 30, 60, 0.08);
+  --smaint-font: "Inter", "Segoe UI", sans-serif;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: var(--smaint-surface);
+  font-family: var(--smaint-font);
+  color: var(--smaint-navy);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.red-icon {
+  color: red !important;
+  font-size: 20px;
+}
+
+.green-icon {
+  color: green !important;
+  font-size: 20px;
+}
+.blinking-clock {
+  animation: blinkRed 1s linear infinite;
+}
+
+@keyframes blinkRed {
+  50% {
+    opacity: 0;
+  }
+}
+
+.swal2-container {
+  z-index: 14000 !important;
+}
