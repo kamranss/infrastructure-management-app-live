@@ -1,5 +1,5 @@
 import React from "react";
-import SideBarimg from "../../Assets/Images/SideBar.jpg";
+import SideBarimg from "../../assets/Images/SideBar.jpg";
 
 // import { Tabs, Tab, AppBar } from "@material-ui/core";
 // import React, { useState } from "react";

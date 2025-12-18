@@ -1,5 +1,5 @@
 import React from "react";
-import SideImageMaintenance from "../../Assets/Images/maintenance.jpg";
+import SideImageMaintenance from "../../assets/Images/maintenance.jpg";
 
 // import { Tabs, Tab, AppBar } from "@material-ui/core";
 // import React, { useState } from "react";

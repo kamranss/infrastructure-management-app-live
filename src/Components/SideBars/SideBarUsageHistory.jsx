@@ -1,5 +1,5 @@
 import React from "react";
-import SideBarEquUsageimg from "../../Assets/Images/EquUsage.webp";
+import SideBarEquUsageimg from "../../assets/Images/EquUsage.webp";
 
 // import { Tabs, Tab, AppBar } from "@material-ui/core";
 // import React, { useState } from "react";
