@@ -133,13 +133,27 @@ const AssetsPage = () => {
   };
 
   return (
-    <Box sx={{ py: 2 }}>
-      <Grid container spacing={3}>
-        <Grid item xs={12} md={3}>
-          <SideBarAssets activeTab={activeTab} onTabChange={setActiveTab} />
+    <Box
+      sx={{
+        py: 2,
+        px: { xs: 1, md: 1.5 },
+        maxWidth: "100%",
+        overflowX: "hidden",
+      }}
+    >
+      <Grid container spacing={2}>
+        <Grid item xs={12} lg={3} sx={{ position: "relative" }}>
+          <Box
+            sx={{
+              position: { xs: "static", lg: "sticky" },
+              top: { lg: 110 },
+            }}
+          >
+            <SideBarAssets activeTab={activeTab} onTabChange={setActiveTab} />
+          </Box>
         </Grid>
 
-        <Grid item xs={12} md={9}>
+        <Grid item xs={12} lg={9}>
           <Stack spacing={3}>
             <Grid container spacing={2}>
               {statCards.map((card) => (
@@ -170,27 +184,40 @@ const AssetsPage = () => {
 
             <Paper sx={{ p: 3, borderRadius: 3 }}>
               <Stack
-                direction={{ xs: "column", md: "row" }}
+                direction={{ xs: "column", sm: "row" }}
                 spacing={2}
                 justifyContent="space-between"
-                alignItems={{ xs: "flex-start", md: "center" }}
+                alignItems={{ xs: "stretch", sm: "center" }}
                 mb={2}
+                sx={{ flexWrap: "wrap", gap: 2 }}
               >
                 <Typography variant="h6" color="#0a1e3c" fontWeight={600}>
                   Asset overview
                 </Typography>
-                <Stack direction="row" spacing={1}>
+                <Stack
+                  direction="row"
+                  spacing={1}
+                  sx={{
+                    flexWrap: "wrap",
+                    width: { xs: "100%", sm: "auto" },
+                    gap: 1,
+                  }}
+                >
                   <Button
                     variant="outlined"
                     startIcon={<FileDownloadRoundedIcon />}
                     color="inherit"
+                    sx={{ flex: { xs: 1, sm: "unset" } }}
                   >
                     Export
                   </Button>
                   <Button
                     variant="contained"
                     startIcon={<AddRoundedIcon />}
-                    sx={{ backgroundColor: "#0f6466" }}
+                    sx={{
+                      backgroundColor: "#0f6466",
+                      flex: { xs: 1, sm: "unset" },
+                    }}
                     onClick={() => navigate("/assetcreate")}
                   >
                     New Asset
@@ -199,16 +226,24 @@ const AssetsPage = () => {
               </Stack>
 
               <Stack
-                direction={{ xs: "column", md: "row" }}
+                direction="row"
                 spacing={2}
                 mb={2}
-                alignItems={{ xs: "stretch", md: "center" }}
+                alignItems="center"
+                sx={{
+                  flexWrap: "wrap",
+                  gap: 2,
+                }}
               >
                 <TextField
                   label="Asset Name"
                   value={filter.name}
                   onChange={(e) => setFilter({ ...filter, name: e.target.value })}
-                  fullWidth
+                  size="small"
+                  sx={{
+                    minWidth: { xs: "100%", sm: 200 },
+                    flex: { xs: "1 1 100%", md: "0 0 220px" },
+                  }}
                 />
                 <TextField
                   label="Operation Site"
@@ -216,13 +251,21 @@ const AssetsPage = () => {
                   onChange={(e) =>
                     setFilter({ ...filter, operationSite: e.target.value })
                   }
-                  fullWidth
+                  size="small"
+                  sx={{
+                    minWidth: { xs: "100%", sm: 200 },
+                    flex: { xs: "1 1 100%", md: "0 0 220px" },
+                  }}
                 />
                 <TextField
                   label="Asset Type"
                   value={filter.type}
                   onChange={(e) => setFilter({ ...filter, type: e.target.value })}
-                  fullWidth
+                  size="small"
+                  sx={{
+                    minWidth: { xs: "100%", sm: 200 },
+                    flex: { xs: "1 1 100%", md: "0 0 220px" },
+                  }}
                 />
                 <FormControlLabel
                   control={
@@ -234,6 +277,11 @@ const AssetsPage = () => {
                     />
                   }
                   label="MP Time Reached"
+                  sx={{
+                    ml: { xs: 0, md: 1 },
+                    flex: { xs: "1 1 auto", md: "0 0 auto" },
+                    alignSelf: "center",
+                  }}
                 />
               </Stack>
 

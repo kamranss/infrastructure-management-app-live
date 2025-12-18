@@ -102,6 +102,7 @@ import {
   Button,
   Tooltip,
 } from "@mui/material";
+import { brandPalette } from "../../constants/uiPalette";
 
 const TableAssetPart = ({ parts = [] }) => {
   const [page, setPage] = useState(0);
@@ -123,9 +124,16 @@ const TableAssetPart = ({ parts = [] }) => {
 
   return (
     <>
-      <TableContainer component={Paper}>
+      <TableContainer
+        component={Paper}
+        sx={{
+          borderRadius: 2,
+          border: `1px solid ${brandPalette.border}`,
+          boxShadow: "none",
+        }}
+      >
         <Table>
-          <TableHead sx={{ backgroundColor: "rgb(190, 213, 236)" }}>
+          <TableHead sx={{ backgroundColor: brandPalette.surface }}>
             <TableRow>
               <TableCell>ID</TableCell>
               <TableCell>Code</TableCell>
@@ -148,11 +156,11 @@ const TableAssetPart = ({ parts = [] }) => {
                   <TableCell>
                     <Tooltip title="Remove this part">
                       <Button
-                        variant="contained"
-                        size="small"
-                        color="error"
-                        onClick={() => handleRemove(row)}
-                      >
+                    variant="contained"
+                    size="small"
+                    color="error"
+                    onClick={() => handleRemove(row)}
+                  >
                         Remove
                       </Button>
                     </Tooltip>

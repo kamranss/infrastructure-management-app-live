@@ -209,6 +209,7 @@ import {
   Paper,
   TablePagination,
 } from "@mui/material";
+import { brandPalette } from "../../constants/uiPalette";
 import clock from "/src/assets/icons/clock.png";
 import correct from "/src/assets/icons/correct.png";
 
@@ -283,9 +284,16 @@ const TableAssetMp = ({ maintenancePlans = [], onServiceClick }) => {
           }
         `}
       </style>
-      <TableContainer component={Paper}>
+      <TableContainer
+        component={Paper}
+        sx={{
+          borderRadius: 2,
+          border: `1px solid ${brandPalette.border}`,
+          boxShadow: "none",
+        }}
+      >
         <Table>
-          <TableHead sx={{ backgroundColor: "rgb(190, 213, 236)" }}>
+          <TableHead sx={{ backgroundColor: brandPalette.surface }}>
             <TableRow>
               <TableCell>Status</TableCell>
               <TableCell>ID</TableCell>

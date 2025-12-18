@@ -12,6 +12,9 @@ import {
   Button,
   Chip,
   IconButton,
+  Drawer,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
 import SpaceDashboardRoundedIcon from "@mui/icons-material/SpaceDashboardRounded";
 import PrecisionManufacturingIcon from "@mui/icons-material/PrecisionManufacturing";
@@ -79,12 +82,16 @@ const EXPANDED_WIDTH = 260;
 const AppShell = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const profile = React.useMemo(() => getStoredProfile(), []);
   const pageTitle = React.useMemo(() => formatTitle(location.pathname), [location.pathname]);
   const [collapsed, setCollapsed] = React.useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
 
   const handleNavigate = (path) => {
     navigate(path);
+    setMobileNavOpen(false);
   };
 
   const handleLogout = () => {
@@ -103,24 +110,35 @@ const AppShell = () => {
       ?.toUpperCase() || "SM";
 
   const toggleCollapsed = () => setCollapsed((prev) => !prev);
+  const toggleMobileNav = () => setMobileNavOpen((prev) => !prev);
+  const effectiveCollapsed = isMobile ? false : collapsed;
+  const navWidth = isMobile
+    ? 0
+    : effectiveCollapsed
+    ? COLLAPSED_WIDTH
+    : EXPANDED_WIDTH;
 
-  return (
-    <Box sx={{ minHeight: "100vh", display: "flex", backgroundColor: "#f4f6fb" }}>
+  const renderNavigation = (options = {}) => {
+    const {
+      collapsedState = effectiveCollapsed,
+      showCollapseToggle = true,
+      onCloseDrawer = () => {},
+    } = options;
+
+    return (
       <Box
         component="aside"
         sx={{
-          position: "sticky",
-          top: 0,
-          left: 0,
-          height: "100vh",
-          width: collapsed ? COLLAPSED_WIDTH : EXPANDED_WIDTH,
+          width: collapsedState ? COLLAPSED_WIDTH : EXPANDED_WIDTH,
           background: brandGradient,
           color: "#ecf4ff",
           display: "flex",
           flexDirection: "column",
           py: 4,
-          px: collapsed ? 1 : 3,
-          transition: "width 0.3s ease",
+          px: collapsedState ? 1 : 3,
+          height: "100%",
+          flex: 1,
+          overflowY: "auto",
         }}
       >
         <Box
@@ -128,11 +146,11 @@ const AppShell = () => {
             mb: 4,
             display: "flex",
             alignItems: "center",
-            justifyContent: collapsed ? "center" : "space-between",
+            justifyContent: collapsedState ? "center" : "space-between",
             gap: 2,
           }}
         >
-          {!collapsed && (
+          {!collapsedState && (
             <Box>
               <Typography variant="h5" fontWeight={700}>
                 Smaint 360
@@ -142,16 +160,29 @@ const AppShell = () => {
               </Typography>
             </Box>
           )}
-          <IconButton
-            size="small"
-            onClick={toggleCollapsed}
-            sx={{
-              color: "#fff",
-              border: "1px solid rgba(255,255,255,0.3)",
-            }}
-          >
-            {collapsed ? <MenuRoundedIcon /> : <MenuOpenRoundedIcon />}
-          </IconButton>
+          {showCollapseToggle ? (
+            <IconButton
+              size="small"
+              onClick={toggleCollapsed}
+              sx={{
+                color: "#fff",
+                border: "1px solid rgba(255,255,255,0.3)",
+              }}
+            >
+              {collapsedState ? <MenuRoundedIcon /> : <MenuOpenRoundedIcon />}
+            </IconButton>
+          ) : (
+            <IconButton
+              size="small"
+              onClick={onCloseDrawer}
+              sx={{
+                color: "#fff",
+                border: "1px solid rgba(255,255,255,0.3)",
+              }}
+            >
+              <MenuOpenRoundedIcon />
+            </IconButton>
+          )}
         </Box>
 
         <List sx={{ flexGrow: 1 }}>
@@ -175,7 +206,7 @@ const AppShell = () => {
                   <ListItemIcon sx={{ color: "#ecf4ff", minWidth: 36 }}>
                     {item.icon}
                   </ListItemIcon>
-                  {!collapsed && (
+                  {!collapsedState && (
                     <ListItemText
                       primary={item.label}
                       primaryTypographyProps={{ fontSize: 14, fontWeight: active ? 700 : 500 }}
@@ -187,7 +218,7 @@ const AppShell = () => {
           })}
         </List>
 
-        {!collapsed && (
+        {!collapsedState && (
           <Box
             sx={{
               backgroundColor: "rgba(255,255,255,0.1)",
@@ -206,6 +237,50 @@ const AppShell = () => {
           </Box>
         )}
       </Box>
+    );
+  };
+
+  return (
+    <Box
+      sx={{
+        minHeight: "100vh",
+        display: "flex",
+        backgroundColor: "#f4f6fb",
+        overflowX: "hidden",
+      }}
+    >
+      <Box
+        sx={{
+          position: "sticky",
+          top: 0,
+          left: 0,
+          minHeight: "100vh",
+          background: brandGradient,
+          display: { xs: "none", md: "flex" },
+          flex: { md: `0 0 ${navWidth}px` },
+          width: { md: `${navWidth}px` },
+          transition: "width 0.3s ease",
+        }}
+      >
+        {renderNavigation()}
+      </Box>
+
+      <Drawer
+        anchor="left"
+        open={isMobile && mobileNavOpen}
+        onClose={toggleMobileNav}
+        ModalProps={{ keepMounted: true }}
+        sx={{
+          display: { xs: "block", md: "none" },
+          "& .MuiDrawer-paper": {
+            width: EXPANDED_WIDTH,
+            background: "transparent",
+            boxShadow: "none",
+          },
+        }}
+      >
+        {renderNavigation({ collapsedState: false, showCollapseToggle: false, onCloseDrawer: toggleMobileNav })}
+      </Drawer>
 
       <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
         <Box
@@ -220,35 +295,59 @@ const AppShell = () => {
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
-            px: 4,
+            px: { xs: 2, md: 4 },
           }}
         >
-          <Typography variant="subtitle1" sx={{ color: "#0a1e3c", fontWeight: 600 }}>
-            {pageTitle}
-          </Typography>
-
           <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-            <Box sx={{ textAlign: "right" }}>
-              <Typography variant="subtitle2" sx={{ fontWeight: 600, color: "#0a1e3c" }}>
-                {profile?.name || "System Admin"}
-              </Typography>
-              <Typography variant="caption" color="text.secondary">
-                {profile?.username || "smaint@workspace"}
-              </Typography>
-            </Box>
+            {isMobile && (
+              <IconButton onClick={toggleMobileNav}>
+                <MenuRoundedIcon />
+              </IconButton>
+            )}
+            <Typography variant="subtitle1" sx={{ color: "#0a1e3c", fontWeight: 600, textTransform: "capitalize" }}>
+              {pageTitle}
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 2,
+            }}
+          >
+            {!isMobile && (
+              <Box sx={{ textAlign: "right" }}>
+                <Typography variant="subtitle2" sx={{ fontWeight: 600, color: "#0a1e3c" }}>
+                  {profile?.name || "System Admin"}
+                </Typography>
+                <Typography variant="caption" color="text.secondary">
+                  {profile?.username || "smaint@workspace"}
+                </Typography>
+              </Box>
+            )}
             <Avatar sx={{ backgroundColor: "#0f6466" }}>{initials}</Avatar>
-            <Button
-              variant="outlined"
-              color="inherit"
-              onClick={handleLogout}
-              startIcon={<LogoutRoundedIcon />}
-            >
-              Logout
-            </Button>
+            {!isMobile && (
+              <Button
+                variant="outlined"
+                color="inherit"
+                onClick={handleLogout}
+                startIcon={<LogoutRoundedIcon />}
+              >
+                Logout
+              </Button>
+            )}
           </Box>
         </Box>
 
-        <Box component="main" sx={{ flex: 1, p: 4, pb: 6 }}>
+        <Box
+          component="main"
+          sx={{
+            flex: 1,
+            p: { xs: 2, md: 4, lg: 5 },
+            pb: { xs: 4, md: 6 },
+          }}
+        >
           <Outlet />
         </Box>
       </Box>

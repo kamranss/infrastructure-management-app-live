@@ -411,15 +411,18 @@
 
 import React, { useState, useEffect } from "react";
 import {
-  Paper,
+  Card,
+  CardContent,
   Typography,
   Box,
   Grid,
   TextField,
   Button,
   Autocomplete,
+  Divider,
 } from "@mui/material";
 import axios from "axios";
+import { brandPalette } from "../../constants/uiPalette";
 
 const AssetInfoCard = ({ detail, onSave, showSnackbar }) => {
   const [editMode, setEditMode] = useState(false);
@@ -541,6 +544,14 @@ const AssetInfoCard = ({ detail, onSave, showSnackbar }) => {
         onChange={(e) => handleChange(key, e.target.value)}
         fullWidth
         disabled={!editMode}
+        size="small"
+        sx={{
+          backgroundColor: editMode ? "#ffffff" : brandPalette.surfaceMuted,
+          borderRadius: 2,
+          "& .MuiOutlinedInput-root": {
+            borderRadius: 2,
+          },
+        }}
       />
     </Grid>
   );
@@ -560,63 +571,103 @@ const AssetInfoCard = ({ detail, onSave, showSnackbar }) => {
           }))
         }
         renderInput={(params) => (
-          <TextField {...params} label={label} fullWidth variant="outlined" />
+          <TextField
+            {...params}
+            label={label}
+            fullWidth
+            variant="outlined"
+            size="small"
+            sx={{
+              backgroundColor: editMode ? "#ffffff" : brandPalette.surfaceMuted,
+              borderRadius: 2,
+              "& .MuiOutlinedInput-root": {
+                borderRadius: 2,
+              },
+            }}
+          />
         )}
       />
     </Grid>
   );
 
   return (
-    <Paper elevation={3} sx={{ p: 2 }}>
-      <Box display="flex" justifyContent="space-between" alignItems="center">
-        <Typography variant="h6">Asset Info</Typography>
-        <Button
-          variant="outlined"
-          size="small"
-          onClick={() => setEditMode((prev) => !prev)}
+    <Card
+      sx={{
+        borderRadius: 3,
+        border: `1px solid ${brandPalette.border}`,
+        backgroundColor: "#ffffff",
+        boxShadow: "var(--smaint-shadow, 0px 12px 24px rgba(15,100,102,0.08))",
+        height: "100%",
+      }}
+    >
+      <CardContent>
+        <Box
+          display="flex"
+          justifyContent="space-between"
+          alignItems="center"
+          flexWrap="wrap"
+          gap={2}
         >
-          {editMode ? "Cancel" : "Edit"}
-        </Button>
-      </Box>
-      <Grid container spacing={2} mt={1}>
-        {renderInputField("name", "Name")}
-        {renderInputField("description", "Description")}
-        {renderInputField("unitNumber", "Unit Number")}
-        {renderInputField("seriaNumber", "Serial Number")}
-        {renderInputField("productionYear", "Production Year")}
-        {renderInputField("color", "Color")}
-        {renderInputField("identification", "Identification")}
-        {renderInputField("capacity", "Capacity")}
-        {renderInputField("usageLocation", "Usage Location")}
-        {renderAutocomplete("type", "Type", "type")}
-        {renderAutocomplete("department", "Department", "department")}
-        {renderAutocomplete("manufacture", "Manufacture", "manufacture")}
-        {renderAutocomplete("model", "Model", "model")}
-        {renderAutocomplete("operationSite", "Operation Site", "operationSite")}
-      </Grid>
-
-      {editMode && (
-        <Box display="flex" justifyContent="flex-end" gap={2} mt={2}>
+          <Box>
+            <Typography variant="subtitle2" sx={{ color: brandPalette.primary }}>
+              Asset Information
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              Keep identification, ownership, and site assignments aligned with
+              real-world records.
+            </Typography>
+          </Box>
           <Button
             variant="outlined"
-            onClick={() => {
-              setEditMode(false);
-              setAssetData(originalData);
-            }}
+            size="small"
+            onClick={() => setEditMode((prev) => !prev)}
           >
-            Cancel
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            onClick={handleSave}
-            disabled={!hasChanges}
-          >
-            Save
+            {editMode ? "Cancel" : "Edit"}
           </Button>
         </Box>
-      )}
-    </Paper>
+        <Grid container spacing={2} mt={1}>
+          {renderInputField("name", "Name")}
+          {renderInputField("description", "Description")}
+          {renderInputField("unitNumber", "Unit Number")}
+          {renderInputField("seriaNumber", "Serial Number")}
+          {renderInputField("productionYear", "Production Year")}
+          {renderInputField("color", "Color")}
+          {renderInputField("identification", "Identification")}
+          {renderInputField("capacity", "Capacity")}
+          {renderInputField("usageLocation", "Usage Location")}
+          {renderAutocomplete("type", "Type", "type")}
+          {renderAutocomplete("department", "Department", "department")}
+          {renderAutocomplete("manufacture", "Manufacture", "manufacture")}
+          {renderAutocomplete("model", "Model", "model")}
+          {renderAutocomplete("operationSite", "Operation Site", "operationSite")}
+        </Grid>
+
+        {editMode && (
+          <>
+            <Divider sx={{ my: 2 }} />
+            <Box display="flex" justifyContent="flex-end" gap={2}>
+              <Button
+                variant="outlined"
+                onClick={() => {
+                  setEditMode(false);
+                  setAssetData(originalData);
+                }}
+              >
+                Cancel
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSave}
+                disabled={!hasChanges}
+              >
+                Save
+              </Button>
+            </Box>
+          </>
+        )}
+      </CardContent>
+    </Card>
   );
 };
 

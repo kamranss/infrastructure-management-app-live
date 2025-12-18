@@ -19,14 +19,14 @@ import clock from "/src/assets/icons/clock.png";
 import correct from "/src/assets/icons/correct.png";
 
 const defaultColumns = [
-  { field: "id", label: "Asset ID", width: 80 },
-  { field: "name", label: "Asset Name", minWidth: 180 },
-  { field: "operationSite", label: "Site", minWidth: 140 },
-  { field: "type", label: "Type", minWidth: 120 },
-  { field: "productionYear", label: "Year", width: 90 },
-  { field: "status", label: "Status", width: 120 },
-  { field: "lastMaintenace", label: "Last Maintenance", minWidth: 150 },
-  { field: "currentValue", label: "Current Value", minWidth: 140 },
+  { field: "id", label: "Asset ID", width: 70 },
+  { field: "name", label: "Asset Name", minWidth: 160 },
+  { field: "operationSite", label: "Site", minWidth: 130 },
+  { field: "type", label: "Type", minWidth: 110 },
+  { field: "productionYear", label: "Year", width: 80 },
+  { field: "status", label: "Status", width: 110 },
+  { field: "lastMaintenace", label: "Last Maintenance", minWidth: 140 },
+  { field: "currentValue", label: "Current Value", minWidth: 120 },
 ];
 
 const formatCurrency = (value) => {
@@ -76,6 +76,8 @@ const TableAsset = ({ columns = defaultColumns, rows = [], onRowClick }) => {
               backgroundColor: statusColorMap[value] || "#90a4ae",
               color: "#fff",
               fontWeight: 600,
+              fontSize: "0.75rem",
+              px: "6px",
             }}
           />
         );
@@ -97,7 +99,24 @@ const TableAsset = ({ columns = defaultColumns, rows = [], onRowClick }) => {
         border: "1px solid var(--smaint-border)",
       }}
     >
-      <Table sx={{ minWidth: 1100 }} aria-label="asset table">
+      <Table
+        size="small"
+        sx={{
+          minWidth: 960,
+          "& .MuiTableCell-root": {
+            py: 1,
+            px: 1.5,
+          },
+          "& .MuiTableCell-head": {
+            fontSize: "0.85rem",
+            letterSpacing: 0.2,
+          },
+          "& .MuiTableCell-body": {
+            fontSize: "0.85rem",
+          },
+        }}
+        aria-label="asset table"
+      >
         <TableHead>
           <TableRow>
             <TableCell
@@ -119,20 +138,21 @@ const TableAsset = ({ columns = defaultColumns, rows = [], onRowClick }) => {
               MP Status
             </TableCell>
             {columns.map((column) => (
-              <TableCell
-                key={column.field}
-                sx={{
-                  backgroundColor: "var(--smaint-surface-alt)",
-                  fontWeight: 600,
-                  color: "var(--smaint-navy)",
-                  textTransform: "capitalize",
-                  minWidth: column.minWidth,
-                  width: column.width,
-                }}
-              >
-                {column.label}
-              </TableCell>
-            ))}
+            <TableCell
+              key={column.field}
+              sx={{
+                backgroundColor: "var(--smaint-surface-alt)",
+                fontWeight: 600,
+                color: "var(--smaint-navy)",
+                textTransform: "capitalize",
+                minWidth: column.minWidth,
+                width: column.width,
+                whiteSpace: "nowrap",
+              }}
+            >
+              {column.label}
+            </TableCell>
+          ))}
             <TableCell
               sx={{
                 backgroundColor: "#eef3ff",
@@ -162,6 +182,7 @@ const TableAsset = ({ columns = defaultColumns, rows = [], onRowClick }) => {
                     component={NavLink}
                     to={`/assetdetails/${row.id}`}
                     size="small"
+                    sx={{ p: 0.5 }}
                   >
                     <VisibilityIcon sx={{ color: "#1976d2" }} />
                   </IconButton>
@@ -172,15 +193,19 @@ const TableAsset = ({ columns = defaultColumns, rows = [], onRowClick }) => {
                   src={row.mpTime === false ? clock : correct}
                   alt={row.mpTime === false ? "MP due" : "MP OK"}
                   style={{
-                    width: 26,
-                    height: 26,
+                    width: 22,
+                    height: 22,
                     animation:
                       row.mpTime === false ? "blinkRed 1.2s linear infinite" : "none",
                   }}
                 />
               </TableCell>
               {columns.map((column) => (
-                <TableCell key={`${row.id}-${column.field}`} align="left">
+                <TableCell
+                  key={`${row.id}-${column.field}`}
+                  align="left"
+                  sx={{ whiteSpace: "nowrap" }}
+                >
                   {renderCell(column, row)}
                 </TableCell>
               ))}
@@ -193,6 +218,7 @@ const TableAsset = ({ columns = defaultColumns, rows = [], onRowClick }) => {
                       search: `?id=${row.id}`,
                     }}
                     size="small"
+                    sx={{ p: 0.5 }}
                   >
                     <InfoOutlinedIcon fontSize="small" sx={{ color: "#0f6466" }} />
                   </IconButton>

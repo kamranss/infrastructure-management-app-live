@@ -22,7 +22,37 @@ import {
   Box,
   Snackbar,
   Alert,
+  Card,
+  CardContent,
 } from "@mui/material";
+import { brandPalette } from "../constants/uiPalette";
+
+const SectionCard = ({ title, subtitle, tone = brandPalette.surface, children }) => (
+  <Card
+    sx={{
+      borderRadius: 3,
+      border: `1px solid ${brandPalette.border}`,
+      backgroundColor: tone,
+      boxShadow: "var(--smaint-shadow, 0px 18px 35px rgba(15,100,102,0.08))",
+      height: "100%",
+    }}
+  >
+    <CardContent sx={{ p: { xs: 2, md: 3 } }}>
+      <Typography
+        variant="subtitle2"
+        sx={{ color: brandPalette.primaryDark, mb: subtitle ? 0.5 : 1.5 }}
+      >
+        {title}
+      </Typography>
+      {subtitle && (
+        <Typography variant="body2" color="text.secondary" mb={2}>
+          {subtitle}
+        </Typography>
+      )}
+      {children}
+    </CardContent>
+  </Card>
+);
 
 const AssetDetails = () => {
   const { id: rowId } = useParams();
@@ -171,52 +201,84 @@ const AssetDetails = () => {
   }
 
   return (
-    <Box p={2}>
-      <Grid container spacing={2}>
+    <Box
+      sx={{
+        background: `linear-gradient(180deg, ${brandPalette.surface} 0%, ${brandPalette.surfaceAlt} 60%, ${brandPalette.surfaceMuted} 100%)`,
+        minHeight: "100vh",
+        p: { xs: 2, md: 4 },
+      }}
+    >
+      <Grid container spacing={3} mb={1}>
         <Grid item xs={12} md={4}>
-          <AssetImageCard imageUrl={imageUrl} />
-          <AssetStatusActions
-            status={equipmentDetail.status}
-            onToggle={toggleModal}
-          />
-          <AssetInfoCard
-            // detail={equipmentDetail}
-            // dropdowns={dropdowns}
-            // onSave={refreshEquipmentDetails}
+          <AssetImageCard
+            imageUrl={imageUrl}
+            hideImage
+            title="Lifecycle & Actions"
+          >
+            <AssetStatusActions
+              status={equipmentDetail.status}
+              onToggle={toggleModal}
+              embedded
+            />
+          </AssetImageCard>
+        </Grid>
+        <Grid item xs={12} md={8}>
+          <Typography variant="h4" sx={{ color: brandPalette.primaryDark }}>
+            {equipmentDetail.name}
+          </Typography>
+          <Typography variant="body1" color="text.secondary" mb={2}>
+            Comprehensive health, usage, and supply chain signals for this
+            asset.
+          </Typography>
+          <AssetSummaryCards detail={equipmentDetail} />
+        </Grid>
+      </Grid>
 
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={6}>
+          <SectionCard
+            title="Maintenance Plans"
+            subtitle="Track upcoming services and drill into activity logs."
+            tone="#ffffff"
+          >
+            <TableAssetMp
+              serviceStatuses={serviceStatuses}
+              maintenancePlans={equipmentDetail.mpList}
+              onServiceClick={(mp) => {
+                setSelectedMp(mp);
+                setIsMpServiceDrawerOpen(true);
+              }}
+            />
+          </SectionCard>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <SectionCard
+            title="Critical Parts"
+            subtitle="Inventory tied to this asset with reorder thresholds."
+            tone={brandPalette.surfaceAlt}
+          >
+            <TableAssetPart parts={equipmentDetail.partList} />
+          </SectionCard>
+        </Grid>
+      </Grid>
+
+      <Grid container spacing={3} mt={0.5}>
+        <Grid item xs={12} md={6}>
+          <AssetInfoCard
             detail={equipmentDetail}
             dropdowns={dropdowns}
             onSave={refreshEquipmentDetails}
             showSnackbar={setSnackbar}
           />
         </Grid>
-
-        <Grid item xs={12} md={8}>
-          <AssetSummaryCards detail={equipmentDetail} />
-
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Maintenance Plans</Typography>
-              {/* <TableAssetMp maintenancePlans={equipmentDetail.mpList} /> */}
-              <TableAssetMp
-                serviceStatuses={serviceStatuses}
-                maintenancePlans={equipmentDetail.mpList}
-                onServiceClick={(mp) => {
-                  setSelectedMp(mp);
-                  setIsMpServiceDrawerOpen(true);
-                }}
-              />
-            </Grid>
-            <Grid item xs={12} md={6}>
-              <Typography variant="h6">Parts</Typography>
-              <TableAssetPart parts={equipmentDetail.partList} />
-            </Grid>
-            <Grid item xs={12} md={12}>
-              <Box>
-                <AssetUsageTable rows={usageHistory} />
-              </Box>
-            </Grid>
-          </Grid>
+        <Grid item xs={12} md={6}>
+          <SectionCard
+            title="Usage History"
+            subtitle="Operations log with cycle counts and runtime KPIs."
+            tone="#ffffff"
+          >
+            <AssetUsageTable rows={usageHistory} />
+          </SectionCard>
         </Grid>
       </Grid>
 
