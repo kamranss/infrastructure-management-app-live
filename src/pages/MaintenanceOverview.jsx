@@ -74,7 +74,7 @@ import ExtensionIcon from "@mui/icons-material/Extension";
 import SettingsSuggestIcon from "@mui/icons-material/SettingsSuggest";
 import StatusCard from "../Components/Card/StatusCard"; // ✅ Import your card
 import { statCardPalette } from "../constants/uiPalette";
-import "../styles/_MpTabs.scss";
+import "../Styles/_MpTabs.scss";
 
 const MaintenanceOverview = () => {
   const [selectedTab, setSelectedTab] = useState(0);
@@ -160,4 +160,3 @@ const MaintenanceOverview = () => {
 };
 
 export default MaintenanceOverview;
-
