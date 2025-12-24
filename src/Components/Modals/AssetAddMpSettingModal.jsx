@@ -20,6 +20,7 @@ const AssettAddMpSettingModal = ({
   onMpaddSuccess,
 }) => {
   const MySwal = withReactContent(Swal);
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
 
   const [validationErrors, setValidationErrors] = useState({});
 
@@ -36,7 +37,7 @@ const AssettAddMpSettingModal = ({
         id: equipmentId, // Use the search query as the 'name' parameter
       });
 
-      const url = `https://localhost:7066/api/MaintenancePlan/dropdown?${params}`;
+      const url = `${API_BASE}/api/MaintenancePlan/dropdown?${params}`;
       const response = await axios.get(url);
       console.log("API response:", response.data);
 
@@ -85,7 +86,7 @@ const AssettAddMpSettingModal = ({
 
     try {
       const response = await axios.post(
-        `https://localhost:7066/api/MaintenancePlan/SetMpSetting`,
+        `${API_BASE}/api/MaintenancePlan/SetMpSetting`,
 
         formData,
         {

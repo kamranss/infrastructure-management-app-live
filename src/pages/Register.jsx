@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import {
   Container,
   Box,
@@ -12,6 +11,7 @@ import {
 } from "@mui/material";
 import FormRegister from "../Components/Forms/FormRegister";
 import { NavLink } from "react-router-dom";
+import { register as registerUser } from "../api/services/authService";
 
 const palette = {
   primary: "#0f6466",
@@ -21,9 +21,6 @@ const palette = {
 };
 
 const Register = () => {
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://localhost:7066";
-  const REGISTER_ENDPOINT = `${API_BASE}/api/Account/register`;
-
   const [formData, setFormData] = useState({
     Name: "",
     Surname: "",
@@ -51,33 +48,25 @@ const Register = () => {
     setSuccessMessage("");
     setSubmitting(true);
 
-    try {
-      const response = await axios.post(REGISTER_ENDPOINT, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+    const response = await registerUser(formData);
 
-      if (response.status === 200 || response.status === 201) {
-        setSuccessMessage("Account created! Please verify your email.");
-        localStorage.setItem("userEmail", formData.Email);
-        localStorage.setItem("userOTP", "");
-        window.location.href = "/verifyEmail";
-        return;
-      }
-
-      setServerError("Registration failed. Please try again.");
-    } catch (error) {
-      if (error.response?.status === 400) {
-        setValidationErrors(error.response?.data?.errors || {});
-      } else {
-        setServerError(
-          "We couldn’t reach the API. Start the backend or try again later."
-        );
-      }
-    } finally {
+    if (response?.errors) {
+      setValidationErrors(response.errors);
       setSubmitting(false);
+      return;
     }
+
+    if (!response || Object.keys(response).length === 0) {
+      setServerError("Registration failed. Please try again.");
+      setSubmitting(false);
+      return;
+    }
+
+    setSuccessMessage("Account created! Please verify your email.");
+    localStorage.setItem("userEmail", formData.Email);
+    localStorage.setItem("userOTP", "");
+    window.location.href = "/verifyEmail";
+    setSubmitting(false);
   };
 
   return (
@@ -111,8 +100,8 @@ const Register = () => {
                 Create an account
               </Typography>
               <Typography variant="body2" sx={{ lineHeight: 1.6 }}>
-                Register to sync with the live maintenance platform. When the API
-                is offline you can still explore the UI using the offline login.
+                Register to sync with the live maintenance platform. When the API is
+                offline you can still explore the UI using the offline login.
               </Typography>
               <Button
                 variant="outlined"

@@ -2,16 +2,16 @@ import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import TableHeader from "../Components/TableHeader";
 import PaginationComponent from "../Components/PaginationComponent";
-import axios from "axios";
 import { TableHead } from "@mui/material";
 import SideBarEquipment from "../Components/SideBarEquipment";
 // import HeaderNav from "../Components/Common/HeaderNav";
 import TableDepartment from "../Components/Tables/TableDepartment";
+import { fetchDepartments } from "../api/services/departmentService";
 
 const Department = () => {
   const [page, setPage] = useState(1);
   const [size, setSize] = useState(5);
-  const [departmentData, setDepartmentdata] = useState();
+  const [departmentData, setDepartmentdata] = useState({ items: [], totalCount: 0 });
 
   // useEffect(() => {
   //   axios
@@ -22,21 +22,13 @@ const Department = () => {
   // }, [page, size]);
 
   useEffect(() => {
-    axios
-      .get("https://localhost:7066/api/Department/All", {
-        params: { page: page, pageSize: size },
+    fetchDepartments({ page, pageSize: size }).then((res) =>
+      setDepartmentdata({
+        items: res.items || [],
+        totalCount: res.totalCount || 0,
       })
-      .then((res) => {
-        console.log("Response:", res.data); // Log the entire response
-        console.log("Items:", res.data); // Log the items array
-        console.log("Current Page:", res.data.currentPage); // Log the current page
-        console.log("Page Count:", res.data.pageCount); // Log the page count
-        console.log("Total Count:", res.data.totalCount); // Log the total count
-        setDepartmentdata(res.data); // Set the department data
-      })
-      .catch((err) => console.log(err));
+    );
   }, [page, size]);
-  console.log(departmentData);
   return (
     <div className="department-main">
       {/* <HeaderNav />; */}

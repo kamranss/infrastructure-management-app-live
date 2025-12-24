@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
 import {
   Paper,
   TextField,
@@ -14,11 +13,7 @@ import {
 import CorporateFareIcon from "@mui/icons-material/CorporateFare";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
-
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-export const DEPARTMENT_ENDPOINT = `${API_BASE_URL}${
-  import.meta.env.VITE_DEPARTMENT_PATH
-}`;
+import { fetchDepartments } from "../../api/services/departmentService";
 
 const SideBarAssets = ({ activeTab, onTabChange }) => {
   const [departments, setDepartments] = useState([]);
@@ -28,14 +23,8 @@ const SideBarAssets = ({ activeTab, onTabChange }) => {
 
   useEffect(() => {
     const fetchDepartments = async () => {
-      try {
-        const response = await axios.get(
-          `${DEPARTMENT_ENDPOINT}?page=1&pageSize=20`
-        );
-        setDepartments(response.data.items); // assuming your API returns { items: [...] }
-      } catch (error) {
-        console.error("Failed to fetch departments:", error);
-      }
+      const res = await fetchDepartments({ page: 1, pageSize: 20 });
+      setDepartments(res.items || []);
     };
 
     fetchDepartments();

@@ -298,7 +298,7 @@ const parseBody = (config) => {
   return {};
 };
 
-const buildLoginResponse = (ctx) => {
+export const buildLoginResponse = (ctx) => {
   const body = parseBody(ctx.config);
   const userName = body.UserNameOrEmail || body.Email || "offline.user";
   return {
@@ -314,7 +314,7 @@ const buildLoginResponse = (ctx) => {
   };
 };
 
-const buildRegisterResponse = (ctx) => {
+export const buildRegisterResponse = (ctx) => {
   const body = parseBody(ctx.config);
   return {
     success: true,

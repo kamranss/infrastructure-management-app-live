@@ -214,6 +214,7 @@ import clock from "/src/assets/icons/clock.png";
 import correct from "/src/assets/icons/correct.png";
 
 const TableAssetMp = ({ maintenancePlans = [], onServiceClick }) => {
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -254,7 +255,7 @@ const TableAssetMp = ({ maintenancePlans = [], onServiceClick }) => {
 
     try {
       await axios.post(
-        "https://localhost:7066/api/MaintenancePlan/CompletMp",
+        `${API_BASE}/api/MaintenancePlan/CompletMp`,
         requestData,
         {
           headers: { "Content-Type": "application/x-www-form-urlencoded" },

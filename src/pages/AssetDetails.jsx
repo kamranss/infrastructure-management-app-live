@@ -56,6 +56,7 @@ const SectionCard = ({ title, subtitle, tone = brandPalette.surface, children })
 
 const AssetDetails = () => {
   const { id: rowId } = useParams();
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
   const [equipmentDetail, setEquipmentDetail] = useState(null);
   const [dropdowns, setDropdowns] = useState(null);
   const [serviceStatuses, setServiceStatuses] = useState([]);
@@ -90,9 +91,7 @@ const AssetDetails = () => {
   const fetchUsageHistory = async () => {
     try {
       const res = await axios.get(
-        `${
-          import.meta.env.VITE_API_BASE_URL
-        }/api/UsageHistory/equipment/${rowId}`
+        `${API_BASE}/api/UsageHistory/equipment/${rowId}`
       );
       setUsageHistory(res.data);
     } catch (error) {
@@ -103,7 +102,7 @@ const AssetDetails = () => {
     const entries = await Promise.all(
       Object.entries(endpoints).map(async ([key, endpoint]) => {
         const res = await axios.get(
-          `https://localhost:7066/api/${endpoint}/DropDown`
+          `${API_BASE}/api/${endpoint}/DropDown`
         );
         return [key, Array.isArray(res.data) ? res.data : []];
       })
@@ -114,7 +113,7 @@ const AssetDetails = () => {
   const fetchData = async () => {
     try {
       const [equipmentRes, dropdownData] = await Promise.all([
-        axios.get(`https://localhost:7066/api/Equipment`, {
+        axios.get(`${API_BASE}/api/Equipment`, {
           params: { id: rowId },
         }),
         fetchDropdowns(),
@@ -146,12 +145,9 @@ const AssetDetails = () => {
       const statusResults = await Promise.all(
         (equipment.mpList || []).map((mp) =>
           axios
-            .get(
-              `${import.meta.env.VITE_API_BASE_URL}${
-                import.meta.env.VITE_API_SERVICE_STATUSES
-              }`,
-              { params: { equipmentId: equipment.id, mpId: mp.id } }
-            )
+            .get(`${API_BASE}${import.meta.env.VITE_API_SERVICE_STATUSES}`, {
+              params: { equipmentId: equipment.id, mpId: mp.id },
+            })
             .then((res) => ({ mpId: mp.id, statuses: res.data }))
             .catch(() => ({ mpId: mp.id, statuses: [] }))
         )

@@ -8,6 +8,7 @@ import axios from "axios";
 
 const UsageHistoryEndForm = ({ rowId, handleClose }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -35,7 +36,7 @@ const UsageHistoryEndForm = ({ rowId, handleClose }) => {
 
     try {
       await axios.patch(
-        "https://localhost:7066/api/UsageHistory/EndUsageHistory",
+        `${API_BASE}/api/UsageHistory/EndUsageHistory`,
         formData,
         {
           headers: {

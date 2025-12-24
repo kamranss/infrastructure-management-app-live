@@ -20,6 +20,7 @@ const AssetStatusChangeModal = ({
   onStatusChangeSuccess,
 }) => {
   const MySwal = withReactContent(Swal);
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
 
   const [validationErrors, setValidationErrors] = useState({});
 
@@ -44,7 +45,7 @@ const AssetStatusChangeModal = ({
         name: name, // Use the search query as the 'name' parameter
       });
 
-      const url = `https://localhost:7066/api/Constants/EquipmentStatus?${params}`;
+      const url = `${API_BASE}/api/Constants/EquipmentStatus?${params}`;
       const response = await axios.get(url);
       console.log("API response:", response.data); // Log the API response
 
@@ -89,8 +90,7 @@ const AssetStatusChangeModal = ({
 
     try {
       const response = await axios.patch(
-        `https://localhost:7066/api/Equipment/StatusChange`,
-
+        `${API_BASE}/api/Equipment/StatusChange`,
         formData,
         {
           headers: {

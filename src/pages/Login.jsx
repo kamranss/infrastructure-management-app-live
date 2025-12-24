@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import axios from "axios";
 import {
   TextField,
   Button,
@@ -12,6 +11,7 @@ import {
   Alert,
   Stack,
 } from "@mui/material";
+import { login as loginUser } from "../api/services/authService";
 
 const palette = {
   primary: "#0f6466",
@@ -22,8 +22,6 @@ const palette = {
 
 const Login = () => {
   const navigate = useNavigate();
-  const API_BASE = import.meta.env.VITE_API_BASE_URL || "https://localhost:7066";
-  const LOGIN_ENDPOINT = `${API_BASE}/api/Account/login`;
 
   const [formData, setFormData] = useState({
     UserNameOrEmail: "",
@@ -44,34 +42,27 @@ const Login = () => {
     e.preventDefault();
     setSubmitting(true);
     setAuthError("");
-    try {
-      const response = await axios.post(LOGIN_ENDPOINT, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
 
-      if (response.status === 200) {
-        const data = response.data || {};
-        if (data.token) {
-          localStorage.setItem("token", data.token);
-        }
-        navigate("/dashboard");
-        return;
-      }
+    const response = await loginUser(formData);
 
-      setAuthError("Unable to sign in. Please try again.");
-    } catch (error) {
-      if (error.response?.status === 400) {
-        setValidationErrors(error.response?.data || {});
-      } else {
-        setAuthError(
-          "We couldn’t reach the API. Start the backend or try the offline demo."
-        );
-      }
-    } finally {
+    if (response?.errors) {
+      setValidationErrors(response.errors);
       setSubmitting(false);
+      return;
     }
+
+    if (!response || Object.keys(response).length === 0) {
+      setAuthError("Unable to sign in. Please try again.");
+      setSubmitting(false);
+      return;
+    }
+
+    if (response.token) {
+      localStorage.setItem("token", response.token);
+    }
+
+    navigate("/dashboard");
+    setSubmitting(false);
   };
 
   return (
@@ -111,9 +102,8 @@ const Login = () => {
                 Live API Login
               </Typography>
               <Typography variant="body2" sx={{ lineHeight: 1.6 }}>
-                This path authenticates against your real backend. If the API is
-                offline, use the “Offline Demo” mode to explore the UI with mock
-                data.
+                This path authenticates against your real backend. If the API is offline,
+                use the “Offline Demo” mode to explore the UI with mock data.
               </Typography>
               <Button
                 variant="outlined"

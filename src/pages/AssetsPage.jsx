@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from "react";
-import axios from "axios";
 import {
   Grid,
   Card,
@@ -25,22 +24,10 @@ import EquipmentModal from "../Components/Modals/EquipmentModal";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
 import { statCardPalette } from "../constants/uiPalette";
-
-export const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
-export const EQUIPMENT_ENDPOINT =
-  API_BASE_URL + import.meta.env.VITE_API_EQUIPMENT_PATH;
-
-const apiEndpoints = [
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-  "https://localhost:7066/api/Equipment/FindEquipmentsByDepartmentId",
-];
+import {
+  fetchEquipmentByDepartment,
+  fetchEquipmentDetail,
+} from "../api/services/equipmentService";
 
 const columns = [
   { field: "id", label: "Asset ID" },
@@ -67,7 +54,7 @@ const AssetsPage = () => {
   const [page, setPage] = useState(1);
   const [size, setSize] = useState(10);
   const [activeTab, setActiveTab] = useState(0);
-  const [data, setData] = useState();
+  const [data, setData] = useState({ items: [], totalCount: 0 });
   const [modalData, setModalData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -83,16 +70,20 @@ const AssetsPage = () => {
     fetchData(activeTab);
   }, [activeTab, page, size]);
 
-  const fetchData = (index) => {
-    const endpoint = apiEndpoints[index];
+  const fetchData = async (index) => {
     setIsLoading(true);
-    axios
-      .get(endpoint, {
-        params: { page, pageSize: size, id: index + 1 },
-      })
-      .then((res) => setData(res.data))
-      .catch((err) => console.error(err))
-      .finally(() => setIsLoading(false));
+    const response = await fetchEquipmentByDepartment({
+      departmentId: index + 1,
+      page,
+      pageSize: size,
+    });
+    setData({
+      items: Array.isArray(response.items) ? response.items : [],
+      totalCount: Number.isFinite(response.totalCount) ? response.totalCount : 0,
+      page: response.page || page,
+      pageSize: response.pageSize || size,
+    });
+    setIsLoading(false);
   };
 
   const filteredRows = useMemo(() => {
@@ -121,15 +112,9 @@ const AssetsPage = () => {
   const handleModalClose = () => setIsModalOpen(false);
 
   const handleTableRowClick = async (rowId) => {
-    try {
-      const response = await axios.get(`https://localhost:7066/api/Equipment`, {
-        params: { id: rowId },
-      });
-      setModalData(response.data);
-      setIsModalOpen(true);
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
+    const detail = await fetchEquipmentDetail(rowId);
+    setModalData(detail);
+    setIsModalOpen(true);
   };
 
   return (

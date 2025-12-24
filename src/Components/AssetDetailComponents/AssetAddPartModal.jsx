@@ -25,8 +25,7 @@ const AssetAddPartModal = ({
   const [selectedPart, setSelectedPart] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
 
-  const API_BASE =
-    import.meta.env.VITE_API_BASE_URL || "https://localhost:7066";
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
   const PART_DROP_DOWN_URL =
     import.meta.env.VITE_API_PART_DROP_DOWN_URL || "/api/Part/DropDwon";
 

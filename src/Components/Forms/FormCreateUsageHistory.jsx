@@ -29,6 +29,7 @@ import {
 
 const FormCreateEquipment = () => {
   // const [enteredName, setEnteredName] = useState("");
+  const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
 
   const [Equipments, setEquipments] = useState([]);
   const [selectedEquipments, setSelectedEquipments] = useState(null);
@@ -71,7 +72,7 @@ const FormCreateEquipment = () => {
         name: name, // Use the search query as the 'name' parameter
       });
 
-      const url = `https://localhost:7066/api/Equipment/DropDown?${params}`;
+      const url = `${API_BASE}/api/Equipment/DropDown?${params}`;
       const response = await axios.get(url);
       console.log("API response:", response.data); // Log the API response
 
@@ -95,7 +96,7 @@ const FormCreateEquipment = () => {
         name: name, // Use the search query as the 'name' parameter
       });
 
-      const url = `https://localhost:7066/api/Constants/OperationType?${params}`;
+      const url = `${API_BASE}/api/Constants/OperationType?${params}`;
       const response = await axios.get(url);
       console.log("API response:", response.data); // Log the API response
 
@@ -146,7 +147,7 @@ const FormCreateEquipment = () => {
       formData.append("StartDate", formDataa.StartDate || "");
 
       await axios.post(
-        "https://localhost:7066/api/UsageHistory/StartUsageHistory",
+        `${API_BASE}/api/UsageHistory/StartUsageHistory`,
         formData,
         {
           headers: {

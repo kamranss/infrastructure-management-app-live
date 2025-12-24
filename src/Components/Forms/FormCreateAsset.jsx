@@ -43,7 +43,8 @@ const FormCreateAsset = () => {
   const fetchDropdownData = async (key, query) => {
     try {
       const params = new URLSearchParams({ name: query || "" });
-      const base = `https://localhost:7066/api/${endpoints[key]}`;
+      const API_BASE = import.meta.env.VITE_API_BASE_URL || "";
+      const base = `${API_BASE}/api/${endpoints[key]}`;
       const isDropDown = key !== "usageLocations";
       const url = isDropDown ? `${base}/DropDown?${params}` : base;
       const { data } = await axios.get(url);
@@ -119,7 +120,7 @@ const FormCreateAsset = () => {
       formPayload.append("EquipmentTypeId", selections.types?.id ?? "");
 
       await axios.post(
-        "https://localhost:7066/api/Equipment/NewEquipment",
+        `${import.meta.env.VITE_API_BASE_URL || ""}/api/Equipment/NewEquipment`,
         formPayload,
         {
           headers: {
